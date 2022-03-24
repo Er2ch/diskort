@@ -1,0 +1,351 @@
+/** DisKort
+ * (c) Er2 2022 <er2@dismail.de>
+ * Zlib License
+ */
+/** DisKort
+ * (c) Er2 2022 <er2@dismail.de>
+ * Zlib License
+ */
+[class^="DocSearch"],
+#app-mount div:not([class]) div[class=""] div:not([class]),
+#app-mount div:not([class]) div[class=""] div div[class*="background-"],
+#app-mount div:not([class]) div[class=""] div[class^="grid-"] div[class^="animation-"],
+[class*="artwork-"],
+div[class^="characterBackground-"] [class*="rightSplit-"],
+div[class^="art-"],
+div[class*="templatesList-"] button[class^="container-"] ~ *,
+[class^="username-"],
+[class^="discrimBase-"],
+div[class^="nameTag-"],
+[class^="usernameInnerRow-"],
+[class^="marketing"],
+[class*="tier"],
+[class*="perks-"],
+[class*="nitro"],
+[class^="upsell"],
+[class^="availabilityIndicator-"],
+div[class^="serverBoostTabItem-"],
+div[class*="hero"],
+div[class*="premium"],
+div[id*="premium"],
+div[class*="goal"],
+button[class^="shinyButton"],
+[class*="giftButton"],
+span[class^="questionMark-"],
+div[class^="characterCount-"] div[class^="root-"],
+[class^="clickableSticker-"],
+nav[class^="privateChannels-"] div div *[data-list-item-id$="nitro"],
+button[class*="followButton-"],
+[class^="nowPlaying"],
+[class^="applicationInstall"],
+div[class^="threadSuggestionBar-"],
+div[class^="welcomeCTA-"],
+div[role="separator"]:not([id$="new-messages-bar"]),
+[class^="bannerContainer-"],
+[class*="banner-"],
+div[class^="keybind-"],
+[class*="socialLink-"],
+div[class^="socialLinks-"],
+div[aria-controls*="nitro"],
+div[aria-controls="library-inventory-tab"],
+div[aria-controls="subscriptions-tab"],
+div[aria-controls="billing-tab"],
+div[aria-controls^="hypesquad"],
+[class^="membersGroup-"],
+#gif-picker-tab,
+#sticker-picker-tab,
+#emoji-picker-tab-panel div[class^="emojiPicker-"] > div[class^="header-"],
+nav[class^="nav-"],
+[class^="searchBar-"],
+div[class^="quickswitcher-"],
+div[class^="toolbar-3_"] > :not([aria-label="Close"]),
+div[class^="channelNotice-"],
+h2[class^="privateChannelsHeaderContainer"],
+div[class^="channelTextArea-"] div div > div button:not([class^="emojiButton"]):not([class^="attachButton-"]),
+div[class^="channelTextArea-"] > div[class^="scrollableContainer-"] div[class^="divider-"],
+div[class^="autocompleteShadow-"],
+[class^="unreadPill-"],
+div[class^="overviewSidebar-"],
+section div[class^="children-"] div[class^="spacer-"] {
+  all: unset    !important;
+  display: none !important;
+  width: 0    !important;
+  height: 0    !important;
+}
+div[aria-label="Servers"] ~ div {
+  position: absolute;
+  bottom: 0;
+  display: none;
+}
+/** DisKort
+ * (c) Er2 2022 <er2@dismail.de>
+ * Zlib License
+ */
+div[class^="scroller-"] div[class^="tutorialContainer-"] {
+  display: unset;
+  margin: 0;
+}
+/** DisKort
+ * (c) Er2 2022 <er2@dismail.de>
+ * Zlib License
+ */
+.dimmer-theme {
+  --header-primary: #dedede;
+  --header-secondary: #cacaca;
+  --text-normal: #dcddde;
+  --interactive-normal: #bebebe;
+  --interactive-hover: #dedede;
+  --background-primary: #3e3e3e;
+  --background-secondary: #2e2e2e;
+  --background-tertiary: #1e1e1e;
+  color: var(--header-primary);
+}
+.dimmer-theme [class*="close-"] {
+  color: var(--interactive-normal);
+}
+.dimmer-theme [class*="close-"]:hover {
+  color: var(--interactive-hover);
+}
+div[class^="layer-"] div.theme-light,
+div[class^="downloadApps-"] {
+  --header-primary: #dedede;
+  --header-secondary: #cacaca;
+  --text-normal: #dcddde;
+  --interactive-normal: #bebebe;
+  --interactive-hover: #dedede;
+  --background-primary: #3e3e3e;
+  --background-secondary: #2e2e2e;
+  --background-tertiary: #1e1e1e;
+  color: var(--header-primary);
+}
+div[class^="layer-"] div.theme-light [class*="close-"],
+div[class^="downloadApps-"] [class*="close-"] {
+  color: var(--interactive-normal);
+}
+div[class^="layer-"] div.theme-light [class*="close-"]:hover,
+div[class^="downloadApps-"] [class*="close-"]:hover {
+  color: var(--interactive-hover);
+}
+div[class^="layer-"] div.theme-light div[class*="root-"],
+div[class^="downloadApps-"] div[class*="root-"] {
+  background-color: var(--background-secondary);
+}
+div[class^="layer-"] div.theme-light div[class*="footer-"],
+div[class^="downloadApps-"] div[class*="footer-"] {
+  background-color: var(--background-primary);
+}
+div[class^="downloadApps"] {
+  background-color: var(--background-secondary) !important;
+}
+div[class^="downloadApps"] h3,
+div[class^="downloadApps"] div[class*="footer-"] {
+  color: var(--header-primary);
+}
+/** DisKort
+ * (c) Er2 2022 <er2@dismail.de>
+ * Zlib License
+ */
+div[class^="userInfo-"] {
+  padding-top: 48px;
+  justify-content: left;
+}
+div[class^="userInfo-"] button {
+  margin-left: 32px;
+  margin-top: -8px;
+}
+div[class^="userInfo-"] div[class^="avatar-"] {
+  top: 32px;
+}
+div[class^="listItemContents-"] div[class^="userInfo"] {
+  padding-top: 0;
+}
+div[class^="listItemContents-"] div[class^="userInfo"] div[class^="avatar-"] {
+  top: 0;
+}
+div[class^="userPopout-"] div[class^="avatarWrapper"] {
+  top: 8px;
+}
+div[class^="userPopout-"] div[class^="headerTop-"] {
+  padding-top: 72px;
+}
+div[class^="profileBanner"] div[class*="avatar"]:not([class^="imageUploaderInner"]) {
+  margin-left: -8px;
+  margin-top: -8px;
+}
+div[class^="headerTop-"] div[class^="headerText"] {
+  margin-left: 96px;
+}
+div[class^="avatarWrapper-"] {
+  margin-right: auto;
+}
+header div[class^="nameTagWithCustomStatus-"],
+header div[class^="nameTagNoCustomStatus-"] {
+  margin-bottom: 48px;
+  margin-left: 160px;
+}
+/** DisKort
+ * (c) Er2 2022 <er2@dismail.de>
+ * Zlib License
+ */
+aside[class^="membersWrap-"],
+aside[class^="membersWrap-"] div[class^="members-"] {
+  min-width: 48px;
+  width: 0;
+}
+aside[class^="membersWrap-"] div[class^="content-"] {
+  height: unset !important;
+  flex-grow: 0;
+}
+aside[class^="membersWrap-"] div[class^="member-"] {
+  padding: 0;
+  margin-left: 0;
+}
+/** DisKort
+ * (c) Er2 2022 <er2@dismail.de>
+ * Zlib License
+ */
+div[class^="messagesWrapper-"] div {
+  scrollbar-width: thin;
+}
+#emoji-picker-tab-panel:not([role="dialog"]) {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+#emoji-picker-tab-panel div[class^="wrapper-"] {
+  top: 0;
+  border-radius: 5px 0 0 5px;
+}
+div[class*="fullscreenOnMobile"] div[class^="flex"] * {
+  overflow: hidden;
+}
+div[class*="templatesList-"] {
+  height: 128px;
+}
+/** DisKort
+ * (c) Er2 2022 <er2@dismail.de>
+ * Zlib License
+ */
+div[class^="tabBarItem-"],
+div[class^="checkbox"],
+button[class*="button"],
+li[class^="channel-"],
+[class^="avatar-"],
+[role="dialog"],
+div[class^="menu-"] div,
+div[class^="role-"],
+div[class^="colorPicker"] div div[class^="saturation"] div,
+#channels ul li div > div[class^="content-"],
+div[class*="input"],
+input[class^="inputDefault-"],
+[class*="Text"],
+[class*="text"] {
+  border-radius: 8px !important;
+}
+[class^="authBox"],
+div[class^="menu"],
+div[class*="popout"],
+div[class*="Popout"],
+div[class*="fullscreenOnMobile"],
+div[class*="root"] div[class^="flex-"],
+[class^="checkboxWrapper-"],
+[class*="embed"],
+div[class^="sidebar-"],
+div[class^="markup-"] pre code,
+div[class^="item-"],
+div[class^="group-"],
+div[class*="card"],
+div[class^="auditLog-"],
+div[class^="auditLog-"] > div,
+div[class^="connectedAccount"],
+div[class^="profileBanner"],
+div[class^="accountProfile"],
+div[class^="autocomplete-"],
+div[class^="pictureInPicture-"],
+div[class^="select-"],
+div[class^="messagesWrapper-"] div,
+div[class^="container-"],
+div[class^="chat-"] {
+  border-radius: 16px !important;
+}
+div[class^="sidebar-"] {
+  margin-right: 8px;
+}
+div[class^="radioBar-"] {
+  border: none;
+}
+div[class^="tabBarItem-"],
+div[class^="auditLog"] div[class^="headerExpanded-"] {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+div[class^="auditLog-"] div[class^="changeDetails-"] {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+[class*="embed-"],
+div[class^="messagesWrapper-"] div[class*="mentioned"] {
+  border-top-left-radius: 4px !important;
+  border-bottom-left-radius: 4px !important;
+}
+section,
+header,
+div[class^="content-"]::before,
+div[class^="tabBody-"]::before {
+  box-shadow: unset !important;
+}
+section div[class^="children-"] {
+  justify-content: center;
+}
+div[class^="tabBarItem-"] {
+  margin-right: 16px;
+  padding: 4px 8px;
+  margin-top: 16px;
+}
+[role="tab"][class*="selected-"],
+[role="tab"]:hover {
+  background-color: var(--background-modifier-hover);
+}
+div[class^="attachedBars-"],
+div[class^="messagesWrapper-"] div[class*="Bar-"]:not([class^="newMessagesBar-"]) {
+  bottom: 16px;
+  padding: 0;
+}
+div[class^="attachedBars-"] {
+  position: relative;
+}
+div[class^="channelTextArea-"] > div[class^="scrollableContainer-"] {
+  background-color: unset;
+}
+div[class^="channelTextArea-"] > div[class^="scrollableContainer-"] button[class^="attachButton-"],
+div[class^="channelTextArea-"] > div[class^="scrollableContainer-"] div[class^="textArea-"],
+div[class^="channelTextArea-"] > div[class^="scrollableContainer-"] div[class^="buttons-"] {
+  background-color: var(--background-secondary);
+  border-radius: 24px !important;
+  margin: 0;
+}
+div[class^="channelTextArea-"] > div[class^="scrollableContainer-"] > div[class^="inner-"] {
+  padding: 0;
+}
+div[class^="channelTextArea-"] > div[class^="scrollableContainer-"] button[class^="attachButton-"] {
+  padding: 8px;
+  width: auto;
+  height: auto;
+}
+div[class^="channelTextArea-"] > div[class^="scrollableContainer-"] div[class^="textArea-"] {
+  margin-left: 8px;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+div[class^="channelTextArea-"] > div[class^="scrollableContainer-"] div[class^="textArea-"] > * {
+  left: 12px;
+}
+div[class^="channelTextArea-"] > div[class^="scrollableContainer-"] div[class^="buttons-"] {
+  height: auto;
+  flex-direction: column;
+  justify-content: center;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
