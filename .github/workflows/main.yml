@@ -1,0 +1,39 @@
+name: Build
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  build:
+    # I prefer alpine, but there is only ubuntu
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Getting repository
+        uses: actions/checkout@v3
+        with:
+          repository: 'https://gitdab.com/er2/diskort'
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+
+      - name: Install less
+        run: npm install less
+      
+      - name: Compiling
+        run: npx lessc btfl.less > btfl.css
+      
+      - name: Setup git
+        run: |
+          git config user.name "Bot"
+          git config user.email "<>"
+      
+      - name: Deploy
+        run: |
+          git add btfl.less
+          git commit -m "remade"
+          git push https://github.com/Er2ch/diskort main
+
