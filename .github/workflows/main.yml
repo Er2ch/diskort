@@ -11,9 +11,8 @@ jobs:
     
     steps:
       - name: Getting repository
-        uses: actions/checkout@v3
-        with:
-          repository: 'https://gitdab.com/er2/diskort'
+        run: |
+          git clone "https://gitdab.com/er2/diskort"
 
       - name: Setup Node
         uses: actions/setup-node@v1
@@ -24,7 +23,7 @@ jobs:
         run: npm install less
       
       - name: Compiling
-        run: npx lessc btfl.less > btfl.css
+        run: npx lessc diskort/btfl.less > btfl.css
       
       - name: Setup git
         run: |
@@ -35,5 +34,5 @@ jobs:
         run: |
           git add btfl.less
           git commit -m "remade"
-          git push https://github.com/Er2ch/diskort main
+          git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git" main
 
