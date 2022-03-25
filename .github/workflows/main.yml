@@ -13,6 +13,7 @@ jobs:
       - name: Getting repository
         run: |
           git clone "https://gitdab.com/er2/diskort"
+          git clone "https://github.com/Er2ch/diskort" gh
 
       - name: Setup Node
         uses: actions/setup-node@v1
@@ -23,15 +24,17 @@ jobs:
         run: npm install less
       
       - name: Compiling
-        run: npx lessc diskort/btfl.less > btfl.css
+        run: npx lessc diskort/btfl.less > gh/btfl.css
       
       - name: Setup git
         run: |
+          cd ~/gh
           git config user.name "Bot"
           git config user.email "<>"
       
       - name: Deploy
         run: |
+          cd ~/gh
           git add btfl.less
           git commit -m "remade"
           git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git" main
