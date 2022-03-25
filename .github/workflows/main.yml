@@ -28,13 +28,12 @@ jobs:
       
       - name: Setup git
         run: |
-          cd ~/gh
+          cd gh
           git config user.name "Bot"
           git config user.email "<>"
       
       - name: Deploy
         run: |
-          cd ~/gh
           git add btfl.less
           git commit -m "remade"
           git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git" main
