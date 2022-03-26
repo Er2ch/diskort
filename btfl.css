@@ -41,16 +41,12 @@ button[class*="followButton-"],
 div[class^="threadSuggestionBar-"],
 div[class^="welcomeCTA-"],
 div[role="separator"]:not([id$="new-messages-bar"]),
+[class^="botTagVerified-"],
 [class^="bannerContainer-"],
 [class*="banner-"],
 div[class^="keybind-"],
 [class*="socialLink-"],
 div[class^="socialLinks-"],
-div[aria-controls*="nitro"],
-div[aria-controls="library-inventory-tab"],
-div[aria-controls="subscriptions-tab"],
-div[aria-controls="billing-tab"],
-div[aria-controls^="hypesquad"],
 [class^="membersGroup-"],
 #gif-picker-tab,
 #sticker-picker-tab,
@@ -145,16 +141,84 @@ div[class^="downloadApps"] div[class*="footer-"] {
  * (c) Er2 2022 <er2@dismail.de>
  * Zlib License
  */
+@media screen and (max-device-width: 800px) {
+  /* FIXME: add close buttons to emoji panel */
+  [class^="channel-"] {
+    max-width: unset;
+    margin: 0 8px;
+  }
+  [class^="layer-"] {
+    padding: 0;
+    margin: auto;
+  }
+  [class^="layer-"] > [class^="container-"],
+  [class^="standardSidebarView-"] {
+    overflow-x: scroll;
+  }
+  [class^="content-"] [class^="sidebar"] {
+    width: calc(50% - 8px - 72px);
+  }
+  [class^="chat-"] {
+    width: 100%;
+  }
+  [class^="tools"] {
+    position: unset !important;
+  }
+  [class*="positionLayer-"],
+  [class*="fullscreenOnMobile"] {
+    overflow: auto;
+    width: 100%;
+    min-width: 100%;
+  }
+  [class^="positionLayer-"] {
+    position: absolute;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+  }
+  [class*="fullscreenOnMobile"] [class^="body"] {
+    width: 100%;
+    height: 100%;
+  }
+  [class^="side-"] > [class^="item-"] {
+    margin-top: 4px !important;
+    padding: 6px 10px !important;
+  }
+  [class^="side-"] > [class^="item-"],
+  :not([class*="pill"]):not([class*="Pill"]) > [class*="item-"],
+  :not([class*="pill"]):not([class*="Pill"]) > [role="tab"],
+  [class^="member-"],
+  #channels li,
+  div[class^="tabBarItem-"] {
+    margin-top: 8px;
+    padding: 0 12px;
+    font-size: 11pt;
+  }
+  [class^="base-"],
+  [class^="contentRegion-"],
+  div[class^="sidebarRegion-"] {
+    width: 200%;
+    min-width: 200%;
+  }
+}
+/** DisKort
+ * (c) Er2 2022 <er2@dismail.de>
+ * Zlib License
+ */
 div[class^="userInfo-"] {
-  padding-top: 48px;
   justify-content: left;
+  padding-top: 24px;
+  height: 56px;
 }
 div[class^="userInfo-"] button {
   margin-left: 32px;
   margin-top: -8px;
 }
 div[class^="userInfo-"] div[class^="avatar-"] {
-  top: 32px;
+  top: 0;
+  border-radius: 0 !important;
+  border-bottom-right-radius: 50% !important;
 }
 div[class^="listItemContents-"] div[class^="userInfo"] {
   padding-top: 0;
@@ -218,11 +282,34 @@ div[class^="messagesWrapper-"] div {
   top: 0;
   border-radius: 5px 0 0 5px;
 }
+div[class^="children-"] div[class^="nicknames-"],
+div[class^="children-"] div[class^="topic-"] {
+  width: unset !important;
+  flex-grow: 0;
+}
 div[class*="fullscreenOnMobile"] div[class^="flex"] * {
   overflow: hidden;
 }
 div[class*="templatesList-"] {
   height: 128px;
+}
+div[class^="toolsContainer-"] {
+  position: fixed !important;
+  right: 21px;
+  padding: 0;
+  margin-top: 60px;
+  border-radius: 16px;
+}
+div[class^="toolsContainer-"] > div {
+  position: unset !important;
+}
+div[class^="toolsContainer-"] > div div[class^="container"] > * {
+  background-color: var(--background-nested-floating);
+}
+div[class^="contentContainer-"] div[class*="stickyHeader-"] {
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0;
 }
 /** DisKort
  * (c) Er2 2022 <er2@dismail.de>
@@ -276,12 +363,11 @@ div[class^="sidebar-"] {
 div[class^="radioBar-"] {
   border: none;
 }
-div[class^="tabBarItem-"],
 div[class^="auditLog"] div[class^="headerExpanded-"] {
   border-bottom-left-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
 }
-div[class^="auditLog-"] div[class^="changeDetails-"] {
+div[class^="auditLog"] div[class^="changeDetails-"] {
   border-top-left-radius: 0 !important;
   border-top-right-radius: 0 !important;
 }
@@ -299,10 +385,17 @@ div[class^="tabBody-"]::before {
 section div[class^="children-"] {
   justify-content: center;
 }
+div[class^="side-"] div[role="tab"],
 div[class^="tabBarItem-"] {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  margin: 0;
+  margin-top: 8px;
   margin-right: 16px;
   padding: 4px 8px;
-  margin-top: 16px;
+}
+div[class^="tabBar-"] {
+  height: 40px;
 }
 [role="tab"][class*="selected-"],
 [role="tab"]:hover {
@@ -348,4 +441,72 @@ div[class^="channelTextArea-"] > div[class^="scrollableContainer-"] div[class^="
   justify-content: center;
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
+}
+/** DisKort
+ * (c) Er2 2022 <er2@dismail.de>
+ * Zlib License
+ */
+div[class^="standardSidebarView-"] {
+  flex-direction: column;
+}
+div[class^="standardSidebarView-"] div[class^="sidebarRegion-"] {
+  overflow: auto hidden;
+  scrollbar-width: thin;
+  background: var(--background-secondary);
+  flex-basis: unset;
+}
+div[class^="standardSidebarView-"] div[class^="sidebarRegion-"] div[class^="header-"],
+div[class^="standardSidebarView-"] div[class^="sidebarRegion-"] div[class^="separator-"] {
+  display: none;
+}
+div[class^="standardSidebarView-"] div[class^="sidebarRegion-"] > div {
+  overflow: auto hidden !important;
+  justify-content: left;
+  max-width: 100%;
+}
+div[class^="standardSidebarView-"] div[class^="sidebarRegion-"] > div > nav {
+  padding: 0;
+}
+div[class^="standardSidebarView-"] div[class^="sidebarRegion-"] > div > nav > div {
+  flex-direction: row;
+  height: 40px;
+}
+div[class^="standardSidebarView-"] div[class^="contentRegion-"] {
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+div[class^="standardSidebarView-"] div[class^="contentRegion-"] * {
+  max-width: 100%;
+}
+div[aria-controls*="nitro"],
+div[aria-controls="library-inventory-tab"],
+div[aria-controls="subscriptions-tab"],
+div[aria-controls="billing-tab"],
+div[aria-controls="keybinds-tab"],
+div[aria-controls="game-activity-tab"],
+div[aria-controls^="hypesquad"] {
+  display: none;
+}
+#connections-tab div[class^="children-"] {
+  flex-direction: row;
+}
+#connections-tab div[class^="children-"] div[class^="accountList-"] {
+  margin-right: 8px;
+  height: 100%;
+}
+#connections-tab div[class^="children-"] div[class^="connectionList-"] {
+  width: 100%;
+}
+#notifications-tab div[class^="children"] div:nth-child(6) {
+  display: none;
+}
+div[class^="accountProfileCard-"] div[class^="field-"]:nth-child(1) {
+  height: 0;
+}
+div[class^="accountProfileCard-"] div[class^="field-"]:nth-child(1) div[class^="constrainedRow-"] {
+  display: none;
+}
+div[class^="accountProfileCard-"] div[class^="field-"]:nth-child(1) button {
+  top: -48pt;
+  left: 60vh;
 }
