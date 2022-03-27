@@ -6,6 +6,7 @@
  * (c) Er2 2022 <er2@dismail.de>
  * Zlib License
  */
+[class*="perksContainer-"],
 [class^="DocSearch"],
 #app-mount div:not([class]) div[class=""] div:not([class]),
 #app-mount div:not([class]) div[class=""] div div[class*="background-"],
@@ -59,7 +60,8 @@ div[class^="quickswitcher-"],
 div[class^="toolbar-3_"] > :not([aria-label="Close"]),
 div[class^="channelNotice-"],
 h2[class^="privateChannelsHeaderContainer"],
-div[class^="channelTextArea-"] div div > div button:not([class^="emojiButton"]):not([class^="attachButton-"]),
+div[class^="channelTextArea-"] div div > div[class^="buttons-"] > button,
+div[class^="channelTextArea-"] div div > div[class^="buttons-"] > div.expression-picker-chat-input-button:not(:nth-child(4)),
 div[class^="channelTextArea-"] > div[class^="scrollableContainer-"] div[class^="divider-"],
 div[class^="autocompleteShadow-"],
 [class^="unreadPill-"],
@@ -439,10 +441,11 @@ div[class^="channelTextArea-"] > div[class^="scrollableContainer-"] div[class^="
 }
 div[class^="channelTextArea-"] > div[class^="scrollableContainer-"] div[class^="buttons-"] {
   height: auto;
-  flex-direction: column;
-  justify-content: center;
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
+}
+div[class^="channelTextArea-"] > div[class^="scrollableContainer-"] div[class^="buttons-"] > * {
+  align-items: center;
 }
 /** DisKort
  * (c) Er2 2022 <er2@dismail.de>
@@ -452,22 +455,25 @@ div[class^="standardSidebarView-"] {
   flex-direction: column;
 }
 div[class^="standardSidebarView-"] div[class^="sidebarRegion-"] {
-  overflow: auto hidden;
-  scrollbar-width: thin;
-  background: var(--background-secondary);
+  overflow: hidden;
   flex-basis: unset;
+  flex-grow: 0;
 }
 div[class^="standardSidebarView-"] div[class^="sidebarRegion-"] div[class^="header-"],
 div[class^="standardSidebarView-"] div[class^="sidebarRegion-"] div[class^="separator-"] {
   display: none;
 }
 div[class^="standardSidebarView-"] div[class^="sidebarRegion-"] > div {
+  background: var(--background-primary);
+  scrollbar-width: thin;
   overflow: auto hidden !important;
   justify-content: left;
   max-width: 100%;
 }
 div[class^="standardSidebarView-"] div[class^="sidebarRegion-"] > div > nav {
   padding: 0;
+  width: unset;
+  background: var(--background-secondary);
 }
 div[class^="standardSidebarView-"] div[class^="sidebarRegion-"] > div > nav > div {
   flex-direction: row;
@@ -529,6 +535,15 @@ div[aria-controls^="hypesquad"] {
 }
 #appearance-tab div[class^="children-"] div[class^="marginTop20-"] > div[class^="slider-"] {
   margin-top: 28px;
+}
+#accessibility-tab div div[class^="children-"] > div:nth-child(2),
+#accessibility-tab div div[class^="children-"] > div:nth-child(3),
+#accessibility-tab div div[class^="children-"] > div:nth-child(6),
+#accessibility-tab div div[class^="children-"] > div:nth-child(7) {
+  display: none;
+}
+#accessibility-tab div div[class^="children-"] > div:nth-child(4) {
+  margin-top: 16px;
 }
 #notifications-tab div[class^="children"] div:nth-child(6) {
   display: none;
