@@ -14,8 +14,10 @@
 div[class^="characterBackground-"] [class*="rightSplit-"],
 div[class^="art-"],
 div[class*="templatesList-"] button[class^="container-"] ~ *,
-[class^="username-"],
+[class*="cozyMessage-"] [class^="username-"],
+div[class*="nameTag-"] [class^="username-"],
 [class^="discrimBase-"],
+div[class^="discordTag-"] [class^="username-"],
 div[class^="nameTag-"],
 [class^="usernameInnerRow-"],
 [class^="marketing"],
@@ -206,16 +208,16 @@ div[class^="downloadApps"] div[class*="footer-"] {
  * (c) Er2 2022 <er2@dismail.de>
  * Zlib License
  */
-div[class^="userInfo-"] {
+div[class^="accountProfileCard-"] div[class^="userInfo-"] {
   justify-content: left;
   padding-top: 24px;
   height: 56px;
 }
-div[class^="userInfo-"] button {
+div[class^="accountProfileCard-"] div[class^="userInfo-"] button {
   margin-left: 32px;
   margin-top: -8px;
 }
-div[class^="userInfo-"] div[class^="avatar-"] {
+div[class^="accountProfileCard-"] div[class^="userInfo-"] div[class^="avatar-"] {
   top: 0;
   border-radius: 0 !important;
   border-bottom-right-radius: 50% !important;
@@ -487,6 +489,19 @@ div[aria-controls="game-activity-tab"],
 div[aria-controls^="hypesquad"] {
   display: none;
 }
+#profile-customization-tab div[class^="children"] div[class^="baseLayout-"] > div:not([class]) {
+  width: 100%;
+}
+#profile-customization-tab div[class^="children"] div[class^="baseLayout-"] > div:not([class]) div[class^="customizationSection-"]:nth-child(2),
+#profile-customization-tab div[class^="children"] div[class^="baseLayout-"] > div:not([class]) div[class^="customizationSection-"]:nth-child(3) {
+  display: none;
+}
+#profile-customization-tab div[class^="children"] div[class^="baseLayout-"] div[class^="bioTextArea-"] {
+  height: 25vh;
+}
+[class^="optionBox-"]:nth-child(2) {
+  display: none;
+}
 #connections-tab div[class^="children-"] {
   flex-direction: row;
 }
@@ -496,6 +511,24 @@ div[aria-controls^="hypesquad"] {
 }
 #connections-tab div[class^="children-"] div[class^="connectionList-"] {
   width: 100%;
+}
+#appearance-tab div[class^="children-"] {
+  flex-flow: row wrap;
+  column-gap: 16px;
+}
+#appearance-tab div[class^="children-"] > div:first-child {
+  width: 100%;
+}
+#appearance-tab div[class^="children-"] div[class^="marginTop8-"],
+#appearance-tab div[class^="children-"] div[class^="marginTop20-"] {
+  width: calc(50% - 8px);
+}
+#appearance-tab div[class^="children-"] div[class^="marginTop8-"] div[class^="divider-"],
+#appearance-tab div[class^="children-"] div[class^="marginTop20-"] div[class^="divider-"] {
+  display: none;
+}
+#appearance-tab div[class^="children-"] div[class^="marginTop20-"] > div[class^="slider-"] {
+  margin-top: 28px;
 }
 #notifications-tab div[class^="children"] div:nth-child(6) {
   display: none;
