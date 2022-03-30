@@ -67,6 +67,8 @@ div[class^="autocompleteShadow-"],
 [class^="unreadPill-"],
 div[class^="overviewSidebar-"],
 section div[class^="children-"] div[class^="spacer-"],
+div[class^="base-"] div[class^="children-"] div[class^="divider-"] ~ div:not([class^="tabBar-"]),
+div[class^="base-"] div[class^="children-"] div[class^="divider-"],
 div[class^="children-"]::after {
   all: unset    !important;
   display: none !important;
@@ -287,11 +289,6 @@ div[class^="messagesWrapper-"] div {
   top: 0;
   border-radius: 5px 0 0 5px;
 }
-div[class^="children-"] div[class^="nicknames-"],
-div[class^="children-"] div[class^="topic-"] {
-  width: unset !important;
-  flex-grow: 0;
-}
 div[class*="fullscreenOnMobile"] div[class^="flex"] * {
   overflow: hidden;
 }
@@ -463,8 +460,14 @@ div[class^="channelTextArea-"] > div[class^="scrollableContainer-"] div[class^="
 [class^="sidebar-"] > nav div[class^="scroller-"] {
   background-color: var(--background-secondary);
 }
-[class^="sidebar-"] nav[class^="private"] {
-  margin-top: 48px;
+[class^="sidebar-"] nav[class^="private"]::before {
+  content: "Discord";
+  color: var(--header-primary);
+  margin: 14px 16px;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 600;
+  font-family: var(--font-display);
 }
 [class^="sidebar-"] section {
   border-bottom-left-radius: 16px !important;
