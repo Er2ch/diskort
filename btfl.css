@@ -47,6 +47,7 @@ div[role="separator"]:not([id$="new-messages-bar"]),
 [class^="botTagVerified-"],
 [class^="bannerContainer-"],
 [class*="banner-"],
+[class^="badgeList-"],
 div[class^="keybind-"],
 [class*="socialLink-"],
 div[class^="socialLinks-"],
@@ -199,7 +200,7 @@ div[class^="downloadApps"] div[class*="footer-"] {
   #channels li,
   div[class^="tabBarItem-"] {
     margin-top: 8px;
-    padding: 0 12px;
+    padding: 8px;
     font-size: 11pt;
   }
   [class^="base-"],
@@ -253,6 +254,48 @@ header div[class^="nameTagWithCustomStatus-"],
 header div[class^="nameTagNoCustomStatus-"] {
   margin-bottom: 48px;
   margin-left: 160px;
+}
+div[class^="focusLock-"]:not([aria-labelledby]) > div[class^="root-"] {
+  flex-direction: row;
+  background-color: var(--background-floating) !important;
+}
+div[class^="focusLock-"]:not([aria-labelledby]) > div[class^="root-"] header {
+  width: 260px;
+  margin: 24px;
+}
+div[class^="focusLock-"]:not([aria-labelledby]) > div[class^="root-"] header div[class^="avatar-"] {
+  top: 0;
+  left: 0;
+  position: relative;
+}
+div[class^="focusLock-"]:not([aria-labelledby]) > div[class^="root-"] header div[class^="headerTop-"] {
+  position: unset;
+  justify-content: left;
+}
+div[class^="focusLock-"]:not([aria-labelledby]) > div[class^="root-"] header div[class^="nameTag"] {
+  width: 64px;
+  position: absolute;
+  margin-top: -84px;
+  margin-left: 130px;
+}
+div[class^="focusLock-"]:not([aria-labelledby]) > div[class^="root-"] header div[class^="customStatus"] {
+  margin-top: 16px;
+  padding: 0;
+}
+div[class^="focusLock-"]:not([aria-labelledby]) > div[class^="root-"] div[class^="tabBarContainer"] {
+  border: none;
+}
+div[class^="focusLock-"]:not([aria-labelledby]) > div[class^="root-"] div[class^="tabBar-"] {
+  flex-direction: column;
+  height: unset;
+  margin: 8px;
+}
+div[class^="focusLock-"]:not([aria-labelledby]) > div[class^="root-"] div[class^="body-"] {
+  margin-left: 16px;
+  height: 370px;
+}
+div[class^="focusLock-"]:not([aria-labelledby]) > div[class^="root-"] div[class^="body-"] > * {
+  padding: 0 !important;
 }
 /** DisKort
  * (c) Er2 2022 <er2@dismail.de>
@@ -437,7 +480,7 @@ div[class^="channelTextArea-"] > div[class^="scrollableContainer-"] div[class^="
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
 }
-div[class^="channelTextArea-"] > div[class^="scrollableContainer-"] div[class^="textArea-"] > * {
+div[class^="channelTextArea-"] > div[class^="scrollableContainer-"] div[class^="textArea-"] div > * {
   left: 12px;
 }
 div[class^="channelTextArea-"] > div[class^="scrollableContainer-"] div[class^="buttons-"] {
