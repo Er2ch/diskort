@@ -1,0 +1,7 @@
+
+*DisKort* - extension for browser which decreases Discord elements.
+
+[[https://addons.mozilla.org/en-US/firefox/addon/diskort/][Add to Firefox]]
+
+This repository contains only compiled CSS file, source is
+[[https://gitdab.com/er2/diskort][here]].
