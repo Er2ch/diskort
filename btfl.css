@@ -82,21 +82,28 @@ div[class^="children-"]::after {
  * (c) Er2 2022 <er2@dismail.de>
  * Zlib License
  */
-.dimmer-theme {
+.theme-dimmer {
   --header-primary: #dedede;
   --header-secondary: #cacaca;
   --text-normal: #dcddde;
-  --interactive-normal: #bebebe;
+  --text-muted: #cbcccd;
+  --interactive-normal: #cacaca;
   --interactive-hover: #dedede;
+  --interactive-active: #dcddde;
+  --interactive-muted: #bebebe;
   --background-primary: #3e3e3e;
   --background-secondary: #2e2e2e;
+  --background-secondary-alt: #2e2e2e;
+  --background-accent: #4f545c;
+  --background-floating: #18191c;
   --background-tertiary: #1e1e1e;
+  --input-background: #1e1e1e;
   color: var(--header-primary);
 }
-.dimmer-theme [class*="close-"] {
+.theme-dimmer [class*="close-"] {
   color: var(--interactive-normal);
 }
-.dimmer-theme [class*="close-"]:hover {
+.theme-dimmer [class*="close-"]:hover {
   color: var(--interactive-hover);
 }
 div[class^="layer-"] div.theme-light,
@@ -104,11 +111,18 @@ div[class^="downloadApps-"] {
   --header-primary: #dedede;
   --header-secondary: #cacaca;
   --text-normal: #dcddde;
-  --interactive-normal: #bebebe;
+  --text-muted: #cbcccd;
+  --interactive-normal: #cacaca;
   --interactive-hover: #dedede;
+  --interactive-active: #dcddde;
+  --interactive-muted: #bebebe;
   --background-primary: #3e3e3e;
   --background-secondary: #2e2e2e;
+  --background-secondary-alt: #2e2e2e;
+  --background-accent: #4f545c;
+  --background-floating: #18191c;
   --background-tertiary: #1e1e1e;
+  --input-background: #1e1e1e;
   color: var(--header-primary);
 }
 div[class^="layer-"] div.theme-light [class*="close-"],
