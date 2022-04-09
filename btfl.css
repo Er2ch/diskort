@@ -16,7 +16,7 @@ div[class^="characterBackground-"] [class*="rightSplit-"],
 div[class^="art-"],
 div[class*="templatesList-"] button[class^="container-"] ~ *,
 li[class^="messageListItem-"] [class*="cozyMessage-"] [class^="username-"],
-div[class*="nameTag-"] [class^="username-"],
+:not([class^="headerText-"]) > div[class*="nameTag-"] [class^="username-"],
 [class^="discrimBase-"],
 div[class^="discordTag-"] [class^="username-"],
 div[class^="nameTag-"],
@@ -40,7 +40,6 @@ div[class^="characterCount-"] div[class^="root-"],
 nav[class^="privateChannels-"] div div *[data-list-item-id$="nitro"],
 button[class*="followButton-"],
 [class^="nowPlaying"],
-[class^="applicationInstall"],
 div[class^="threadSuggestionBar-"],
 div[class^="welcomeCTA-"],
 div[role="separator"]:not([id$="new-messages-bar"]),
@@ -59,13 +58,12 @@ div[class^="socialLinks-"],
 nav[class^="nav-"],
 nav > [class^="searchBar-"],
 [role^="tab"] > [class^="searchBar-"],
-div[class^="quickswitcher-"],
 div[class^="toolbar-3_"] > :nth-child(3) ~ *:not([class^="search-"]),
 ul[data-list-id="guildsnav"] div[class^="scroller-"] > div:nth-child(4) ~ div,
 div[class^="channelNotice-"],
 h2[class^="privateChannelsHeaderContainer"],
 div[class^="channelTextArea-"] div div > div[class^="buttons-"] > button,
-div[class^="channelTextArea-"] div div > div[class^="buttons-"] > div.expression-picker-chat-input-button:not(:nth-child(4)),
+main form div div > div[class^="channelTextArea-"] div div > div[class^="buttons-"] > div.expression-picker-chat-input-button:not(:nth-child(4)),
 div[class^="channelTextArea-"] > div[class^="scrollableContainer-"] div[class^="divider-"],
 div[class^="autocompleteShadow-"],
 [class^="unreadPill-"],
@@ -73,7 +71,8 @@ div[class^="overviewSidebar-"],
 section div[class^="children-"] div[class^="spacer-"],
 div[class^="base-"] div[class^="children-"] div[class^="divider-"] ~ div:not([class^="tabBar-"]),
 div[class^="base-"] div[class^="children-"] div[class^="divider-"],
-div[class^="children-"]::after {
+div[class^="children-"]::after,
+form::before {
   all: unset    !important;
   display: none !important;
   width: 0    !important;
@@ -318,16 +317,16 @@ div[class^="focusLock-"]:not([aria-labelledby]) > div[class^="root-"][class*="sm
  * (c) Er2 2022 <er2@dismail.de>
  * Zlib License
  */
-aside[class^="membersWrap-"],
-aside[class^="membersWrap-"] div[class^="members-"] {
+[class^="membersWrap-"],
+[class^="membersWrap-"] div[class^="members-"] {
   min-width: 48px;
   width: 0;
 }
-aside[class^="membersWrap-"] div[class^="content-"] {
+[class^="membersWrap-"] div[class^="content-"] {
   height: unset !important;
   flex-grow: 0;
 }
-aside[class^="membersWrap-"] div[class^="member-"] {
+[class^="membersWrap-"] div[class^="member-"] {
   padding: 0;
   margin-left: 0;
 }
@@ -401,7 +400,7 @@ div[class^="role-"],
 div[class^="colorPicker"] div div[class^="saturation"] div,
 #channels ul li div > div[class^="content-"],
 div[class^="searchBox-"],
-div[class*="input"],
+[class*="input"],
 input[class^="inputDefault-"],
 div[class*="TextArea"],
 textarea {
@@ -415,7 +414,10 @@ div[class*="fullscreenOnMobile"],
 div[class*="root"] div[class^="flex-"],
 [class^="checkboxWrapper-"],
 div[class^="markup-"] pre code,
-div[class^="item-"],
+span[class^="spoiler"],
+span.mention,
+code.inline,
+[class^="item-"],
 div[class^="group-"],
 div[class*="card"],
 div[class^="categoryItem-"] > *,
@@ -427,10 +429,11 @@ div[class^="auditLog-"] > div,
 div[class^="connectedAccount-"],
 div[class^="profileBanner"],
 div[class^="accountProfile"],
+div[class^="quickswitcher-"] input,
 div[class^="autocomplete-"],
 div[class^="pictureInPicture-"],
 div[class^="select-"],
-div[class^="messagesWrapper-"] div,
+div[class^="messagesWrapper-"] div:not([class*="Inner"]):not([class^="filename"]),
 div[class^="layer-"] > div[class^="container-"],
 div[class^="base-"] div[class^="content-"] > div:nth-child(2),
 div[class^="guildList-"] div[class^="container-"],
@@ -458,7 +461,7 @@ div[class^="auditLog"] div[class^="changeDetails-"] {
   max-width: unset;
   background: unset;
 }
-div[class^="messagesWrapper-"] div[class*="mentioned"] {
+div[class^="messagesWrapper-"] div[class^="message-"][class*="mentioned"] {
   border-top-left-radius: 4px !important;
   border-bottom-left-radius: 4px !important;
 }
@@ -561,7 +564,7 @@ div[class^="chat-"] > div {
   background-color: var(--background-primary);
 }
 [class^="sidebar"] header,
-[class^="chat"] > section,
+[class^="chat"] > section:not([class^="chat"]),
 [class^="container-"] > section {
   background-color: var(--background-tertiary) !important;
 }
@@ -578,39 +581,62 @@ div[class^="chat-"] > div {
   color: var(--interactive-active);
   animation: glow 0.7s linear infinite alternate;
 }
+div[class^="channelTextArea-"],
+div[class^="quickswitcher-"] div[class^="scroll"],
 div[class^="focusLock-"] > div,
 div[class^="avatar-"] {
   background: unset !important;
   border-color: transparent;
+  scrollbar-color: var(--scrollbar-auto-scrollbar-color-track) transparent;
 }
-div[class^="emojiPicker-"],
-#emoji-picker-tab-panel div[class*="header-"],
+div[class^="layers-"] > div[class*="baseLayer"] {
+  opacity: 1 !important;
+}
+div[class^="layers-"] > div[class^="layer"]:not([class*="baseLayer"]) > div[class] {
+  --acrylic-color: var(--background-primary);
+}
+div[class^="layers-"] > div[class^="layer"]:not([class*="baseLayer"]),
+div[class^="layers-"] > div[class^="layer"]:not([class*="baseLayer"]) > div[class],
+div[class^="layers-"] > div[class^="layer"]:not([class*="baseLayer"]) div[class*="scroller"] {
+  background: unset;
+}
+div[class^="layers-"] > div[class^="layer-"] > div[class],
+div[class^="channelHeader-"],
+div[class^="focusLock-"] > div,
+[role="dialog"]:not([class^="focusLock-"]),
+[role="menu"] {
+  --acrylic-blur: 8px;
+  --acrylic-color: var(--background-floating);
+  --acrylic-opacity: 0.5;
+}
+div[class^="layers-"] > div[class^="layer-"] > div[class],
+div[class^="channelHeader-"],
 div[class^="focusLock-"] > div,
 [role="dialog"]:not([class^="focusLock-"]),
 [role="menu"],
-div[class^="emojiPicker-"] > *,
-#emoji-picker-tab-panel div[class*="header-"] > *,
+div[class^="layers-"] > div[class^="layer-"] > div[class] > *,
+div[class^="channelHeader-"] > *,
 div[class^="focusLock-"] > div > *,
 [role="dialog"]:not([class^="focusLock-"]) > *,
 [role="menu"] > *,
-div[class^="emojiPicker-"] div[class^="body"],
-#emoji-picker-tab-panel div[class*="header-"] div[class^="body"],
+div[class^="layers-"] > div[class^="layer-"] > div[class] div[class^="body"],
+div[class^="channelHeader-"] div[class^="body"],
 div[class^="focusLock-"] > div div[class^="body"],
 [role="dialog"]:not([class^="focusLock-"]) div[class^="body"],
 [role="menu"] div[class^="body"] {
   background: unset;
 }
-div[class^="emojiPicker-"]::before,
-#emoji-picker-tab-panel div[class*="header-"]::before,
+div[class^="layers-"] > div[class^="layer-"] > div[class]::before,
+div[class^="channelHeader-"]::before,
 div[class^="focusLock-"] > div::before,
 [role="dialog"]:not([class^="focusLock-"])::before,
 [role="menu"]::before,
-div[class^="emojiPicker-"]::after,
-#emoji-picker-tab-panel div[class*="header-"]::after,
+div[class^="layers-"] > div[class^="layer-"] > div[class]::after,
+div[class^="channelHeader-"]::after,
 div[class^="focusLock-"] > div::after,
 [role="dialog"]:not([class^="focusLock-"])::after,
 [role="menu"]::after {
-  border-radius: 16px;
+  border-radius: inherit;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -619,21 +645,21 @@ div[class^="focusLock-"] > div::after,
   content: "";
   z-index: -1;
 }
-div[class^="emojiPicker-"]::before,
-#emoji-picker-tab-panel div[class*="header-"]::before,
+div[class^="layers-"] > div[class^="layer-"] > div[class]::before,
+div[class^="channelHeader-"]::before,
 div[class^="focusLock-"] > div::before,
 [role="dialog"]:not([class^="focusLock-"])::before,
 [role="menu"]::before {
-  backdrop-filter: blur(8px) saturate(125%);
+  backdrop-filter: blur(var(--acrylic-blur)) saturate(125%);
 }
-div[class^="emojiPicker-"]::after,
-#emoji-picker-tab-panel div[class*="header-"]::after,
+div[class^="layers-"] > div[class^="layer-"] > div[class]::after,
+div[class^="channelHeader-"]::after,
 div[class^="focusLock-"] > div::after,
 [role="dialog"]:not([class^="focusLock-"])::after,
 [role="menu"]::after {
-  background-color: var(--background-floating);
+  background-color: var(--acrylic-color);
   background-image: url(data:image/png;base64,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);
-  opacity: 0.5;
+  opacity: var(--acrylic-opacity);
 }
 /** DisKort
  * (c) Er2 2022 <er2@dismail.de>
@@ -685,6 +711,20 @@ div[aria-controls^="hypesquad"],
 div[aria-controls="stickers-tab"] {
   display: none;
 }
+#my-account-tab > div {
+  display: flex;
+  flex-flow: row wrap;
+  column-gap: 16px;
+}
+#my-account-tab > div div[class^="divider"] {
+  display: none;
+}
+#my-account-tab > div > div:first-child {
+  width: 50%;
+}
+#my-account-tab > div > div:nth-child(3) {
+  width: calc(50% - 16px);
+}
 #profile-customization-tab div[class^="children"] div[class^="baseLayout-"] > div:not([class]) {
   width: 100%;
 }
@@ -709,6 +749,7 @@ div[aria-controls="stickers-tab"] {
   width: 100%;
 }
 #appearance-tab div[class^="children-"] {
+  display: flex;
   flex-flow: row wrap;
   column-gap: 16px;
 }
@@ -717,7 +758,7 @@ div[aria-controls="stickers-tab"] {
 }
 #appearance-tab div[class^="children-"] div[class^="marginTop8-"],
 #appearance-tab div[class^="children-"] div[class^="marginTop20-"] {
-  width: calc(50% - 8px);
+  width: calc(50% - 16px);
 }
 #appearance-tab div[class^="children-"] div[class^="marginTop8-"] div[class^="divider-"],
 #appearance-tab div[class^="children-"] div[class^="marginTop20-"] div[class^="divider-"] {
@@ -746,5 +787,5 @@ div[class^="accountProfileCard-"] div[class^="field-"]:nth-child(1) div[class^="
 }
 div[class^="accountProfileCard-"] div[class^="field-"]:nth-child(1) button {
   top: -48pt;
-  left: 360pt;
+  left: 300pt;
 }
