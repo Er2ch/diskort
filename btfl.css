@@ -2,10 +2,6 @@
  * (c) Er2 2022 <er2@dismail.de>
  * Zlib License
  */
-/** DisKort
- * (c) Er2 2022 <er2@dismail.de>
- * Zlib License
- */
 [class*="perksContainer-"],
 [class^="DocSearch"],
 #app-mount div:not([class]) div[class=""] div:not([class]),
@@ -78,10 +74,6 @@ form::before {
   width: 0    !important;
   height: 0    !important;
 }
-/** DisKort
- * (c) Er2 2022 <er2@dismail.de>
- * Zlib License
- */
 .theme-dimmer {
   --header-primary: #dedede;
   --header-secondary: #cacaca;
@@ -148,10 +140,6 @@ div[class^="downloadApps"] h3,
 div[class^="downloadApps"] div[class*="footer-"] {
   color: var(--header-primary);
 }
-/** DisKort
- * (c) Er2 2022 <er2@dismail.de>
- * Zlib License
- */
 @media screen and (max-device-width: 800px) {
   /* FIXME: add close buttons to emoji panel */
   [class^="channel-"] {
@@ -213,10 +201,6 @@ div[class^="downloadApps"] div[class*="footer-"] {
     min-width: 200%;
   }
 }
-/** DisKort
- * (c) Er2 2022 <er2@dismail.de>
- * Zlib License
- */
 div[class^="accountProfileCard-"] div[class^="userInfo-"] {
   justify-content: left;
   padding-top: 24px;
@@ -313,10 +297,6 @@ div[class^="focusLock-"]:not([aria-labelledby]) > div[class^="root-"][class*="sm
 div[class^="focusLock-"]:not([aria-labelledby]) > div[class^="root-"][class*="small-"] div[class^="tabBarItem-"][class*="selected-"] {
   border-right: 2px solid var(--interactive-active);
 }
-/** DisKort
- * (c) Er2 2022 <er2@dismail.de>
- * Zlib License
- */
 [class^="membersWrap-"],
 [class^="membersWrap-"] div[class^="members-"] {
   min-width: 48px;
@@ -330,10 +310,6 @@ div[class^="focusLock-"]:not([aria-labelledby]) > div[class^="root-"][class*="sm
   padding: 0;
   margin-left: 0;
 }
-/** DisKort
- * (c) Er2 2022 <er2@dismail.de>
- * Zlib License
- */
 ul[data-list-id="guildsnav"] div[class^="scroller-"] {
   display: flex;
   flex-direction: column;
@@ -385,10 +361,6 @@ div[class^="contentContainer-"] div[class*="stickyHeader-"] {
   padding-right: 0;
   margin: 0;
 }
-/** DisKort
- * (c) Er2 2022 <er2@dismail.de>
- * Zlib License
- */
 div[class^="tabBarItem-"],
 div[class^="checkbox"],
 button[class*="button"],
@@ -661,10 +633,6 @@ div[class^="focusLock-"] > div::after,
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWDg4N3d3dtbW17e3t1dXWBgYGHh4d5eXlzc3OLi4ubm5uVlZWPj4+NjY19fX2JiYl/f39ra2uRkZGZmZlpaWmXl5dvb29xcXGTk5NnZ2c8TV1mAAAAG3RSTlNAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEAvEOwtAAAFVklEQVR4XpWWB67c2BUFb3g557T/hRo9/WUMZHlgr4Bg8Z4qQgQJlHI4A8SzFVrapvmTF9O7dmYRFZ60YiBhJRCgh1FYhiLAmdvX0CzTOpNE77ME0Zty/nWWzchDtiqrmQDeuv3powQ5ta2eN0FY0InkqDD73lT9c9lEzwUNqgFHs9VQce3TVClFCQrSTfOiYkVJQBmpbq2L6iZavPnAPcoU0dSw0SUTqz/GtrGuXfbyyBniKykOWQWGqwwMA7QiYAxi+IlPdqo+hYHnUt5ZPfnsHJyNiDtnpJyayNBkF6cWoYGAMY92U2hXHF/C1M8uP/ZtYdiuj26UdAdQQSXQErwSOMzt/XWRWAz5GuSBIkwG1H3FabJ2OsUOUhGC6tK4EMtJO0ttC6IBD3kM0ve0tJwMdSfjZo+EEISaeTr9P3wYrGjXqyC1krcKdhMpxEnt5JetoulscpyzhXN5FRpuPHvbeQaKxFAEB6EN+cYN6xD7RYGpXpNndMmZgM5Dcs3YSNFDHUo2LGfZuukSWyUYirJAdYbF3MfqEKmjM+I2EfhA94iG3L7uKrR+GdWD73ydlIB+6hgref1QTlmgmbM3/LeX5GI1Ux1RWpgxpLuZ2+I+IjzZ8wqE4nilvQdkUdfhzI5QDWy+kw5Wgg2pGpeEVeCCA7b85BO3F9DzxB3cdqvBzWcmzbyMiqhzuYqtHRVG2y4x+KOlnyqla8AoWWpuBoYRxzXrfKuILl6SfiWCbjxoZJUaCBj1CjH7GIaDbc9kqBY3W/Rgjda1iqQcOJu2WW+76pZC9QG7M00dffe9hNnseupFL53r8F7YHSwJWUKP2q+k7RdsxyOB11n0xtOvnW4irMMFNV4H0uqwS5ExsmP9AxbDTc9JwgneAT5vTiUSm1E7BSflSt3bfa1tv8Di3R8n3Af7MNWzs49hmauE2wP+ttrq+AsWpFG2awvsuOqbipWHgtuvuaAE+A1Z/7gC9hesnr+7wqCwG8c5yAg3AL1fm8T9AZtp/bbJGwl1pNrE7RuOX7PeMRUERVaPpEs+yqeoSmuOlokqw49pgomjLeh7icHNlG19yjs6XXOMedYm5xH2YxpV2tc0Ro2jJfxC50ApuxGob7lMsxfTbeUv07TyYxpeLucEH1gNd4IKH2LAg5TdVhlCafZvpskfncCfx8pOhJzd76bJWeYFnFciwcYfubRc12Ip/ppIhA1/mSZ/RxjFDrJC5xifFjJpY2Xl5zXdguFqYyTR1zSp1Y9p+tktDYYSNflcxI0iyO4TPBdlRcpeqjK/piF5bklq77VSEaA+z8qmJTFzIWiitbnzR794USKBUaT0NTEsVjZqLaFVqJoPN9ODG70IPbfBHKK+/q/AWR0tJzYHRULOa4MP+W/HfGadZUbfw177G7j/OGbIs8TahLyynl4X4RinF793Oz+BU0saXtUHrVBFT/DnA3ctNPoGbs4hRIjTok8i+algT1lTHi4SxFvONKNrgQFAq2/gFnWMXgwffgYMJpiKYkmW3tTg3ZQ9Jq+f8XN+A5eeUKHWvJWJ2sgJ1Sop+wwhqFVijqWaJhwtD8MNlSBeWNNWTa5Z5kPZw5+LbVT99wqTdx29lMUH4OIG/D86ruKEauBjvH5xy6um/Sfj7ei6UUVk4AIl3MyD4MSSTOFgSwsH/QJWaQ5as7ZcmgBZkzjjU1UrQ74ci1gWBCSGHtuV1H2mhSnO3Wp/3fEV5a+4wz//6qy8JxjZsmxxy5+4w9CDNJY09T072iKG0EnOS0arEYgXqYnXcYHwjTtUNAcMelOd4xpkoqiTYICWFq0JSiPfPDQdnt+4/wuqcXY47QILbgAAAABJRU5ErkJggg==);
   opacity: var(--acrylic-opacity);
 }
-/** DisKort
- * (c) Er2 2022 <er2@dismail.de>
- * Zlib License
- */
 div[class^="standardSidebarView-"] {
   flex-direction: column;
 }
@@ -758,7 +726,7 @@ div[aria-controls="stickers-tab"] {
 }
 #appearance-tab div[class^="children-"] div[class^="marginTop8-"],
 #appearance-tab div[class^="children-"] div[class^="marginTop20-"] {
-  width: calc(50% - 16px);
+  width: calc(100% / 2 - 16px);
 }
 #appearance-tab div[class^="children-"] div[class^="marginTop8-"] div[class^="divider-"],
 #appearance-tab div[class^="children-"] div[class^="marginTop20-"] div[class^="divider-"] {
@@ -788,4 +756,35 @@ div[class^="accountProfileCard-"] div[class^="field-"]:nth-child(1) div[class^="
 div[class^="accountProfileCard-"] div[class^="field-"]:nth-child(1) button {
   top: -48pt;
   left: 300pt;
+}
+#language-tab div[class^="children-"] div div > div[role="radiogroup"] {
+  display: flex;
+  flex-flow: row wrap;
+  column-gap: 16px;
+}
+#language-tab div[class^="children-"] div div > div[role="radiogroup"] > div {
+  width: calc(100% / 3 - 16px);
+}
+#streamer-mode-tab div[class^="children-"] {
+  display: flex;
+  flex-flow: row wrap;
+  column-gap: 16px;
+}
+#streamer-mode-tab div[class^="children-"] > * {
+  width: calc(100% / 2 - 16px);
+}
+#streamer-mode-tab div[class^="children-"] > *:nth-child(1),
+#streamer-mode-tab div[class^="children-"] > *:nth-child(2) {
+  width: 100%;
+}
+#streamer-mode-tab div[class^="children-"] > *:nth-child(3) {
+  display: none;
+}
+div[class^="slider-"] div[class^="track-"] div[class^="grabber-"] {
+  width: 16px;
+  height: 16px;
+  border: none;
+  border-radius: 8px;
+  margin-top: -8px;
+  margin-left: -8px;
 }
