@@ -18,23 +18,6 @@ li[class^="messageListItem-"] [class*="cozyMessage-"] [class^="username-"],
 div[class^="discordTag-"] [class^="username-"],
 div[class^="nameTag-"],
 [class^="usernameInnerRow-"],
-[class^="marketing"],
-[class*="tier"],
-[class*="perks-"],
-[class*="nitro"],
-[class^="upsell"],
-[class^="availabilityIndicator-"],
-div[class^="serverBoostTabItem-"],
-div[class*="hero"],
-div[class*="premium"],
-div[id*="premium"],
-div[class*="goal"],
-button[class^="shinyButton"],
-[class*="giftButton"],
-span[class^="questionMark-"],
-div[class^="characterCount-"] div[class^="root-"],
-[class^="clickableSticker-"],
-nav[class^="privateChannels-"] div div [data-list-item-id$="nitro"],
 button[class*="followButton-"],
 [class^="nowPlaying"],
 div[class^="threadSuggestionBar-"],
@@ -60,25 +43,52 @@ form::before,
 div[class^="children-"]::after,
 div[class^="base-"] div[class^="children-"] div[class^="divider-"],
 div[class^="base-"] div[class^="children-"] div[class^="divider-"] ~ div:not([class^="tabBar-"]),
+.nitro,
+[class^="membersGroup-"],
+div[class^="keybind-"],
+[class*="socialLink-"],
+div[class^="socialLinks-"],
+div[aria-controls="keybinds-tab"],
+div[aria-controls="game-activity-tab"],
+div[aria-controls="analytics-tab"],
+div[aria-controls="partner-tab"],
+#accessibility-tab div div[class^="children-"] > div:nth-child(2),
+#accessibility-tab div div[class^="children-"] > div:nth-child(3),
+#accessibility-tab div div[class^="children-"] > div:nth-child(6),
+#accessibility-tab div div[class^="children-"] > div:nth-child(7),
+#notifications-tab div[class^="children"] div:nth-child(6),
+[class^="marketing"],
+[class*="tier"],
+[class*="perks-"],
+[class*="nitro"],
+[class^="upsell"],
+[class^="availabilityIndicator-"],
+div[class^="serverBoostTabItem-"],
+div[class*="hero"],
+div[class*="premium"],
+div[id*="premium"],
+div[class*="goal"],
+button[class^="shinyButton"],
+[class*="giftButton"],
+span[class^="questionMark-"],
+div[class^="characterCount-"] div[class^="root-"],
+[class^="clickableSticker-"],
+nav[class^="privateChannels-"] div div [data-list-item-id$="nitro"],
+#channels > ul div[class^="container-"],
 [class^="botTagVerified-"],
 [class^="bannerContainer-"],
 [class*="banner-"],
 [class^="badgeList-"],
 [class^="profileBadges-"],
-[class^="membersGroup-"],
-div[class^="keybind-"],
-[class*="socialLink-"],
-div[class^="socialLinks-"],
 div[aria-controls*="nitro"],
 div[aria-controls="library-inventory-tab"],
 div[aria-controls="subscriptions-tab"],
 div[aria-controls="billing-tab"],
-div[aria-controls="keybinds-tab"],
-div[aria-controls="game-activity-tab"],
 div[aria-controls^="hypesquad"],
 div[aria-controls="stickers-tab"],
-div[aria-controls="analytics-tab"],
-div[aria-controls="partner-tab"] {
+#profile-customization-tab div[class^="children"] div[class^="baseLayout-"] > div:not([class]) div[class^="customizationSection-"]:nth-child(2),
+#profile-customization-tab div[class^="children"] div[class^="baseLayout-"] > div:not([class]) div[class^="customizationSection-"]:nth-child(3),
+[class^="optionBox-"]:nth-child(2) {
   all: unset    !important;
   display: none !important;
   width: 0    !important;
@@ -195,6 +205,9 @@ div[class^="contentContainer-"] div[class*="stickyHeader-"] {
     width: 200%;
     min-width: 200%;
   }
+}
+#channels > ul div[class^="container-"] + li {
+  padding-top: 0;
 }
 [class^="sidebar-"],
 [class^="sidebar-"] > nav {
@@ -371,6 +384,7 @@ div[class*="popout"],
 div[class*="Popout"],
 div[class*="fullscreenOnMobile"],
 div[class*="root"] div[class^="flex-"],
+div[class^="chat-"],
 div[class^="noticeRegion"] > div,
 [class^="resultsGroup-"],
 div[class^="auditLog-"],
@@ -396,7 +410,8 @@ code.inline,
 div[class^="group-"],
 div[class*="card"],
 div[class^="categoryItem-"] > *,
-div[class^="content-"] img[class^="image-"] {
+div[class^="content-"] img[class^="image-"],
+div[class^="banner-"] {
   border-radius: 16px !important;
 }
 div[class^="sidebar-"] {
@@ -473,11 +488,13 @@ div[class^="channelTextArea-"] > div[class^="scrollableContainer-"] div[class^="
   align-items: center;
 }
 div[class^="slider-"] div[class^="track-"] div[class^="grabber-"] {
+  position: relative;
   width: 16px;
   height: 16px;
   border: none;
   border-radius: 8px;
-  margin-top: -8px;
+  top: 12px;
+  margin-top: unset;
   margin-left: -8px;
 }
 div[role="tab"],
@@ -490,9 +507,11 @@ div[class^="tabBarItem-"] {
   padding: 4px 8px;
 }
 div[role="tab"]:hover,
-div[class^="tabBarItem-"]:hover {
-  background-color: var(--interactive-hover);
-  color: var(--text-muted) !important;
+div[class^="tabBarItem-"]:hover,
+div[role="tab"][class*="selected-"],
+div[class^="tabBarItem-"][class*="selected-"] {
+  background-color: var(--interactive-muted) !important;
+  color: var(--text-normal) !important;
 }
 div[class^="container-"][class*="disabled-"] {
   cursor: not-allowed;
@@ -511,30 +530,7 @@ div[class^="container-"] svg[class^="slider-"] > * {
 div[class^="radioBar-"] {
   border: none;
 }
-.theme-dimmer {
-  --header-primary: #dedede;
-  --header-secondary: #cacaca;
-  --text-normal: #dcddde;
-  --text-muted: #cbcccd;
-  --interactive-normal: #cacaca;
-  --interactive-hover: #dedede;
-  --interactive-active: #dcddde;
-  --interactive-muted: #bebebe;
-  --background-primary: #3e3e3e;
-  --background-secondary: #2e2e2e;
-  --background-secondary-alt: #2e2e2e;
-  --background-accent: #4f545c;
-  --background-floating: #18191c;
-  --background-tertiary: #1e1e1e;
-  --input-background: #1e1e1e;
-  color: var(--header-primary);
-}
-.theme-dimmer [class*="close-"] {
-  color: var(--interactive-normal);
-}
-.theme-dimmer [class*="close-"]:hover {
-  color: var(--interactive-hover);
-}
+.theme-dimmer,
 div[class^="layer-"] div.theme-light,
 div[class^="downloadApps-"] {
   --header-primary: #dedede;
@@ -554,10 +550,12 @@ div[class^="downloadApps-"] {
   --input-background: #1e1e1e;
   color: var(--header-primary);
 }
+.theme-dimmer [class*="close-"],
 div[class^="layer-"] div.theme-light [class*="close-"],
 div[class^="downloadApps-"] [class*="close-"] {
   color: var(--interactive-normal);
 }
+.theme-dimmer [class*="close-"]:hover,
 div[class^="layer-"] div.theme-light [class*="close-"]:hover,
 div[class^="downloadApps-"] [class*="close-"]:hover {
   color: var(--interactive-hover);
@@ -598,18 +596,42 @@ div[class^="listItemContents-"] div[class^="userInfo"] {
 div[class^="listItemContents-"] div[class^="userInfo"] div[class^="avatar-"] {
   top: 0;
 }
-div[class^="userPopout-"] div[class^="avatarWrapper"] {
+div[class^="userPopout-"] div[class^="avatarWrapper"],
+div[class^="profileBannerPreview-"] div[class^="avatarWrapper"] {
   top: 8px;
 }
-div[class^="userPopout-"] div[class^="headerTop-"] {
+div[class^="userPopout-"] div[class^="headerTop-"],
+div[class^="profileBannerPreview-"] div[class^="headerTop-"] {
   padding-top: 72px;
+}
+div[class^="userPopout-"] div[class^="headerTop-"] div[class^="headerText"],
+div[class^="profileBannerPreview-"] div[class^="headerTop-"] div[class^="headerText"] {
+  margin-left: 96px;
 }
 div[class^="profileBanner"] div[class*="avatar"]:not([class^="imageUploaderInner"]) {
   margin-left: -8px;
   margin-top: -8px;
 }
-div[class^="headerTop-"] div[class^="headerText"] {
-  margin-left: 96px;
+div[class^="accountProfileCard-"] div[class^="field-"]:nth-child(1) {
+  height: 0;
+}
+div[class^="accountProfileCard-"] div[class^="field-"]:nth-child(1) div[class^="constrainedRow-"] {
+  display: none;
+}
+div[class^="accountProfileCard-"] div[class^="field-"]:nth-child(1) button {
+  top: -48pt;
+  left: 300pt;
+}
+div[class^="banner-"] {
+  position: absolute;
+  width: inherit;
+  max-height: 84px;
+}
+div[class^="banner-"][class*="popoutBanner"] {
+  position: relative;
+  max-height: 128px;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
 }
 div[class^="avatarWrapper-"] {
   margin-right: auto;
@@ -671,7 +693,7 @@ div[class^="focusLock-"]:not([aria-labelledby]) > div[class^="root-"][class*="sm
 }
 div[class^="focusLock-"]:not([aria-labelledby]) > div[class^="root-"][class*="small-"] div[class^="tabBarItem-"]:hover,
 div[class^="focusLock-"]:not([aria-labelledby]) > div[class^="root-"][class*="small-"] div[class^="tabBarItem-"][class*="selected-"] {
-  border-right: 2px solid var(--interactive-active);
+  border-right: 2px solid var(--interactive-active) !important;
 }
 [class^="membersWrap-"],
 [class^="membersWrap-"] div[class^="members-"] {
@@ -740,10 +762,6 @@ div[class^="standardSidebarView-"] div[class^="contentRegion-"] * {
 #profile-customization-tab div[class^="children"] div[class^="baseLayout-"] > div:not([class]) {
   width: 100%;
 }
-#profile-customization-tab div[class^="children"] div[class^="baseLayout-"] > div:not([class]) div[class^="customizationSection-"]:nth-child(2),
-#profile-customization-tab div[class^="children"] div[class^="baseLayout-"] > div:not([class]) div[class^="customizationSection-"]:nth-child(3) {
-  display: none;
-}
 #profile-customization-tab div[class^="children"] div[class^="baseLayout-"] div[class^="bioTextArea-"] {
   height: 30vh;
 }
@@ -775,27 +793,8 @@ div[class^="standardSidebarView-"] div[class^="contentRegion-"] * {
 #appearance-tab div[class^="children-"] div[class^="marginTop20-"] > div[class^="slider-"] {
   margin-top: 28px;
 }
-#accessibility-tab div div[class^="children-"] > div:nth-child(2),
-#accessibility-tab div div[class^="children-"] > div:nth-child(3),
-#accessibility-tab div div[class^="children-"] > div:nth-child(6),
-#accessibility-tab div div[class^="children-"] > div:nth-child(7) {
-  display: none;
-}
 #accessibility-tab div div[class^="children-"] > div:nth-child(4) {
   margin-top: 16px;
-}
-#notifications-tab div[class^="children"] div:nth-child(6) {
-  display: none;
-}
-div[class^="accountProfileCard-"] div[class^="field-"]:nth-child(1) {
-  height: 0;
-}
-div[class^="accountProfileCard-"] div[class^="field-"]:nth-child(1) div[class^="constrainedRow-"] {
-  display: none;
-}
-div[class^="accountProfileCard-"] div[class^="field-"]:nth-child(1) button {
-  top: -48pt;
-  left: 300pt;
 }
 #language-tab div[class^="children-"] div div > div[role="radiogroup"] {
   display: flex;
