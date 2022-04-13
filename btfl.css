@@ -3,7 +3,7 @@
  * Zlib License
  */
 .hide,
-ul[data-list-id="guildsnav"] div[class^="scroller-"] > div:nth-child(4) ~ div,
+ul[data-list-id="guildsnav"] div[class^="scroller-"] > div[aria-label] + div ~ div,
 [class*="perksContainer-"],
 [class^="DocSearch"],
 #app-mount div:not([class]) div[class=""] div:not([class]),
@@ -57,6 +57,7 @@ div[aria-controls="partner-tab"],
 #accessibility-tab div div[class^="children-"] > div:nth-child(6),
 #accessibility-tab div div[class^="children-"] > div:nth-child(7),
 #notifications-tab div[class^="children"] div:nth-child(6),
+#community-tab > div[class^="container-"] > div[class^="banner-"],
 [class^="marketing"],
 [class*="tier"],
 [class*="perks-"],
@@ -76,8 +77,6 @@ div[class^="characterCount-"] div[class^="root-"],
 nav[class^="privateChannels-"] div div [data-list-item-id$="nitro"],
 #channels > ul div[class^="container-"],
 [class^="botTagVerified-"],
-[class^="bannerContainer-"],
-[class*="banner-"],
 [class^="badgeList-"],
 [class^="profileBadges-"],
 div[aria-controls*="nitro"],
@@ -99,12 +98,12 @@ ul[data-list-id="guildsnav"] div[class^="scroller-"] {
   flex-direction: column;
   overflow: hidden !important;
 }
-ul[data-list-id="guildsnav"] div[class^="scroller-"] > div:nth-child(3) {
+ul[data-list-id="guildsnav"] div[class^="scroller-"] > div[aria-label] {
   overflow: hidden scroll;
   scrollbar-width: none;
   flex-grow: 1;
 }
-ul[data-list-id="guildsnav"] div[class^="scroller-"] > div:nth-child(4) {
+ul[data-list-id="guildsnav"] div[class^="scroller-"] > div[aria-label] + div {
   margin-top: 4px;
 }
 div[class^="messagesWrapper-"] div {
@@ -590,28 +589,6 @@ div[class^="accountProfileCard-"] div[class^="userInfo-"] div[class^="avatar-"] 
   border-radius: 0 !important;
   border-bottom-right-radius: 50% !important;
 }
-div[class^="listItemContents-"] div[class^="userInfo"] {
-  padding-top: 0;
-}
-div[class^="listItemContents-"] div[class^="userInfo"] div[class^="avatar-"] {
-  top: 0;
-}
-div[class^="userPopout-"] div[class^="avatarWrapper"],
-div[class^="profileBannerPreview-"] div[class^="avatarWrapper"] {
-  top: 8px;
-}
-div[class^="userPopout-"] div[class^="headerTop-"],
-div[class^="profileBannerPreview-"] div[class^="headerTop-"] {
-  padding-top: 72px;
-}
-div[class^="userPopout-"] div[class^="headerTop-"] div[class^="headerText"],
-div[class^="profileBannerPreview-"] div[class^="headerTop-"] div[class^="headerText"] {
-  margin-left: 96px;
-}
-div[class^="profileBanner"] div[class*="avatar"]:not([class^="imageUploaderInner"]) {
-  margin-left: -8px;
-  margin-top: -8px;
-}
 div[class^="accountProfileCard-"] div[class^="field-"]:nth-child(1) {
   height: 0;
 }
@@ -916,6 +893,9 @@ div[data-list-id="audit-log"] > * {
 }
 #integrations-tab > div:nth-child(2) div[class^="divider"]:empty {
   display: none;
+}
+#integrations-tab > div:nth-child(2) img[class^="iconWrapper-"] {
+  width: unset;
 }
 #integrations-tab > div:nth-child(2) button[class^="createButton-"],
 #integrations-tab > div:nth-child(2) [class^="sectionHeader-"],
