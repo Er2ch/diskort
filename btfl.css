@@ -75,6 +75,7 @@ span[class^="questionMark-"],
 div[class^="characterCount-"] div[class^="root-"],
 [class^="clickableSticker-"],
 nav[class^="privateChannels-"] div div [data-list-item-id$="nitro"],
+#channels > ul > div[aria-hidden="true"],
 #channels > ul div[class^="container-"],
 [class^="botTagVerified-"],
 [class^="badgeList-"],
@@ -102,6 +103,9 @@ ul[data-list-id="guildsnav"] div[class^="scroller-"] > div[aria-label] {
   overflow: hidden scroll;
   scrollbar-width: none;
   flex-grow: 1;
+}
+ul[data-list-id="guildsnav"] div[class^="scroller-"] > div[aria-label]::-webkit-scrollbar {
+  display: none;
 }
 ul[data-list-id="guildsnav"] div[class^="scroller-"] > div[aria-label] + div {
   margin-top: 4px;
@@ -371,6 +375,7 @@ div[class^="searchBox-"],
 input[class^="inputDefault-"],
 div[class*="TextArea"],
 textarea,
+div[class^="bd-"],
 div[class^="tabBarItem-"],
 div[class^="checkbox"],
 button[class*="button"] {
@@ -401,6 +406,8 @@ div[class^="base-"] div[class^="content-"] > div:nth-child(2),
 div[class^="guildList-"] div[class^="container-"],
 div[class^="container"] > div,
 div[class^="chat-"] > div[class^="content-"],
+div.bd-switch-body,
+div[class^="container-"],
 div[class^="markup-"] pre code,
 span[class^="spoiler"],
 span.mention,
@@ -498,6 +505,8 @@ div[class^="slider-"] div[class^="track-"] div[class^="grabber-"] {
 }
 div[role="tab"],
 div[class^="tabBarItem-"] {
+  border-top-left-radius: 16px !important;
+  border-top-right-radius: 16px !important;
   border-bottom-left-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
   margin: 0;
@@ -512,10 +521,12 @@ div[class^="tabBarItem-"][class*="selected-"] {
   background-color: var(--interactive-muted) !important;
   color: var(--text-normal) !important;
 }
-div[class^="container-"][class*="disabled-"] {
+div.bd-switch-body[class*="disabled"],
+div[class^="container-"][class*="disabled"] {
   cursor: not-allowed;
 }
-div[class^="container-"] svg[class^="slider-"] {
+div.bd-switch-body > svg[class*="slider"],
+div[class^="container-"] > svg[class*="slider"] {
   width: 16px  !important;
   height: 16px !important;
   border-radius: 50%;
@@ -523,11 +534,18 @@ div[class^="container-"] svg[class^="slider-"] {
   margin-right: 0;
   background-color: white;
 }
-div[class^="container-"] svg[class^="slider-"] > * {
+div.bd-switch-body > svg[class*="slider"] > *,
+div[class^="container-"] > svg[class*="slider"] > * {
   display: none;
 }
 div[class^="radioBar-"] {
   border: none;
+}
+div.bd-search-wrapper,
+div.bd-changelog-button {
+  align-self: center;
+  margin: 0;
+  margin-right: 8px;
 }
 .theme-dimmer,
 div[class^="layer-"] div.theme-light,
@@ -801,7 +819,7 @@ div[class^="standardSidebarView-"] div[class^="contentRegion-"] * {
 #streamer-mode-tab div[class^="children-"] > *:nth-child(2) {
   width: 100%;
 }
-#streamer-mode-tab div[class^="children-"] > *:nth-child(3) {
+#streamer-mode-tab div[class^="children-"] h5 {
   display: none;
 }
 #overview-tab div[class^="children-"] > div:nth-child(3) {
