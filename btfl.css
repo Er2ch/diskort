@@ -77,6 +77,7 @@ div[class^="characterCount-"] div[class^="root-"],
 nav[class^="privateChannels-"] div div [data-list-item-id$="nitro"],
 #channels > ul > div[aria-hidden="true"],
 #channels > ul div[class^="container-"],
+nav div[class^="animatedContainer-"] [class^="bannerImg-"],
 [class^="botTagVerified-"],
 [class^="badgeList-"],
 [class^="profileBadges-"],
@@ -109,6 +110,10 @@ ul[data-list-id="guildsnav"] div[class^="scroller-"] > div[aria-label]::-webkit-
 }
 ul[data-list-id="guildsnav"] div[class^="scroller-"] > div[aria-label] + div {
   margin-top: 4px;
+}
+#channels ul {
+  height: unset !important;
+  margin-bottom: 8px;
 }
 div[class^="messagesWrapper-"] div {
   scrollbar-width: thin;
@@ -211,6 +216,12 @@ div[class^="contentContainer-"] div[class*="stickyHeader-"] {
 }
 #channels > ul div[class^="container-"] + li {
   padding-top: 0;
+}
+nav div[class^="animatedContainer-"] {
+  background: unset;
+}
+nav div[class^="animatedContainer-"] div[class^="bannerImage-"]::before {
+  background: unset !important;
 }
 [class^="sidebar-"],
 [class^="sidebar-"] > nav {
@@ -367,7 +378,6 @@ li[class^="channel-"],
 [class^="avatar-"],
 [role="dialog"],
 div[class^="menu-"] [role="menuitem"],
-div[class^="role-"],
 div[class^="colorPicker"] div div[class^="saturation"] div,
 #channels ul li div > div[class^="content-"],
 div[class^="searchBox-"],
@@ -382,6 +392,7 @@ button[class*="button"] {
   border-radius: 8px !important;
 }
 .rounder,
+div[class^="role-"],
 [class^="authBox"],
 [role="menu"],
 div[class*="popout"],
@@ -423,6 +434,46 @@ div[class^="banner-"] {
 div[class^="sidebar-"] {
   margin-right: 8px;
 }
+div[class^="sidebar-"],
+div[class^="sidebar-"] li,
+div[class^="sidebar-"] li div {
+  transition: ease-out 0.25s;
+}
+div[class^="sidebar-"]:not(:hover) {
+  width: 48px;
+  overflow: hidden;
+}
+div[class^="sidebar-"]:not(:hover) li {
+  margin-left: -4px;
+}
+div[class^="sidebar-"]:not(:hover) li div[class^="interactive-"] {
+  margin-left: 8px;
+}
+div[class^="sidebar-"]:not(:hover) li div[class^="layout-"] {
+  padding-left: 2px;
+}
+div[class^="sidebar-"]:not(:hover) li a + div[class^="children-"] {
+  display: none;
+}
+div[class^="repliedMessage-"]::before {
+  margin: 0;
+  border: none;
+  width: 4px;
+  border-radius: 2px;
+  background: var(--interactive-muted);
+  left: 0;
+  right: 100%;
+  top: 0;
+  bottom: 0;
+}
+div[class^="repliedMessage-"] > img {
+  margin-left: 16px;
+}
+div[class^="role-"] {
+  padding: 0;
+  border-width: 2px;
+  border-style: solid;
+}
 [class*="embed"] {
   border-top-left-radius: 3px !important;
   border-bottom-left-radius: 3px !important;
@@ -461,6 +512,7 @@ div[class^="attachedBars-"] {
 }
 div[class^="channelTextArea-"] > div[class^="scrollableContainer-"] {
   background-color: unset;
+  opacity: 1;
 }
 div[class^="channelTextArea-"] > div[class^="scrollableContainer-"] button[class^="attachButton-"],
 div[class^="channelTextArea-"] > div[class^="scrollableContainer-"] div[class^="textArea-"],
@@ -492,6 +544,45 @@ div[class^="channelTextArea-"] > div[class^="scrollableContainer-"] div[class^="
 }
 div[class^="channelTextArea-"] > div[class^="scrollableContainer-"] div[class^="buttons-"] > * {
   align-items: center;
+}
+#status-picker > div {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+#status-picker > div #status-picker-online,
+#status-picker > div #status-picker-idle,
+#status-picker > div #status-picker-dnd,
+#status-picker > div #status-picker-invisible {
+  margin: 8px;
+}
+#status-picker > div #status-picker-online > div,
+#status-picker > div #status-picker-idle > div,
+#status-picker > div #status-picker-dnd > div,
+#status-picker > div #status-picker-invisible > div {
+  padding: 0;
+}
+#status-picker > div #status-picker-online > div > div[class^="status-"],
+#status-picker > div #status-picker-idle > div > div[class^="status-"],
+#status-picker > div #status-picker-dnd > div > div[class^="status-"],
+#status-picker > div #status-picker-invisible > div > div[class^="status-"],
+#status-picker > div #status-picker-online > div > div[class^="description-"],
+#status-picker > div #status-picker-idle > div > div[class^="description-"],
+#status-picker > div #status-picker-dnd > div > div[class^="description-"],
+#status-picker > div #status-picker-invisible > div > div[class^="description-"] {
+  display: none;
+}
+#status-picker > div #status-picker-online svg,
+#status-picker > div #status-picker-idle svg,
+#status-picker > div #status-picker-dnd svg,
+#status-picker > div #status-picker-invisible svg {
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+}
+#status-picker > div #status-picker-custom-status,
+#status-picker > div div[class^="submenuContainer-"] {
+  width: 100%;
 }
 div[class^="slider-"] div[class^="track-"] div[class^="grabber-"] {
   position: relative;
@@ -743,7 +834,7 @@ div[class^="standardSidebarView-"] div[class^="contentRegion-"] * {
   display: flex;
   flex-flow: row wrap;
   column-gap: 16px;
-  row-gap: 16px / 2;
+  row-gap: 8px;
 }
 #my-account-tab > div > * {
   width: calc(100% / 2 - 16px);
@@ -753,6 +844,7 @@ div[class^="standardSidebarView-"] div[class^="contentRegion-"] * {
 }
 #my-account-tab > div > div:first-child {
   width: 50%;
+  min-width: 512px;
 }
 #profile-customization-tab div[class^="children"] div[class^="baseLayout-"] > div:not([class]) {
   width: 100%;
@@ -774,7 +866,7 @@ div[class^="standardSidebarView-"] div[class^="contentRegion-"] * {
   display: flex;
   flex-flow: row wrap;
   column-gap: 16px;
-  row-gap: 16px / 2;
+  row-gap: 8px;
 }
 #appearance-tab div[class^="children-"] > * {
   width: calc(100% / 2 - 16px);
@@ -795,7 +887,7 @@ div[class^="standardSidebarView-"] div[class^="contentRegion-"] * {
   display: flex;
   flex-flow: row wrap;
   column-gap: 16px;
-  row-gap: 16px / 2;
+  row-gap: 8px;
 }
 #language-tab div[class^="children-"] div div > div[role="radiogroup"] > * {
   width: calc(100% / 3 - 16px);
@@ -807,7 +899,7 @@ div[class^="standardSidebarView-"] div[class^="contentRegion-"] * {
   display: flex;
   flex-flow: row wrap;
   column-gap: 16px;
-  row-gap: 16px / 2;
+  row-gap: 8px;
 }
 #streamer-mode-tab div[class^="children-"] > * {
   width: calc(100% / 2 - 16px);
@@ -826,7 +918,7 @@ div[class^="standardSidebarView-"] div[class^="contentRegion-"] * {
   display: flex;
   flex-flow: row wrap;
   column-gap: 16px;
-  row-gap: 16px / 2;
+  row-gap: 8px;
 }
 #overview-tab div[class^="children-"] > div:nth-child(3) > * {
   width: calc(100% / 2 - 16px);
@@ -845,7 +937,7 @@ div[class^="standardSidebarView-"] div[class^="contentRegion-"] * {
   display: flex;
   flex-flow: row wrap;
   column-gap: 16px;
-  row-gap: 16px / 2;
+  row-gap: 8px;
 }
 #overview-tab div[class^="children-"] > div:nth-child(4) > div > div:last-child > * {
   width: calc(100% / 2 - 16px);
@@ -857,7 +949,7 @@ div[class^="standardSidebarView-"] div[class^="contentRegion-"] * {
   display: flex;
   flex-flow: row wrap;
   column-gap: 16px;
-  row-gap: 16px / 2;
+  row-gap: 8px;
 }
 #overview-tab div[class^="children-"] > div:nth-child(5) > div > div:last-child > * {
   width: calc(100% / 3 - 16px);
@@ -877,7 +969,7 @@ div[class^="standardSidebarView-"] div[class^="contentRegion-"] * {
   display: flex;
   flex-flow: row wrap;
   column-gap: 16px;
-  row-gap: 16px / 2;
+  row-gap: 8px;
 }
 #moderation-tab div[class^="children-"] div[role="radiogroup"] > * {
   width: calc(100% / 2 - 16px);
@@ -889,7 +981,7 @@ div[data-list-id="audit-log"] {
   display: flex;
   flex-flow: row wrap;
   column-gap: 16px;
-  row-gap: 16px / 2;
+  row-gap: 8px;
 }
 div[data-list-id="audit-log"] > * {
   width: calc(100% / 2 - 16px);
@@ -904,7 +996,7 @@ div[data-list-id="audit-log"] > * {
   display: flex;
   flex-flow: row wrap;
   column-gap: 16px;
-  row-gap: 16px / 2;
+  row-gap: 8px;
 }
 #integrations-tab > div:nth-child(2) > * {
   width: calc(100% / 2 - 16px);
@@ -926,7 +1018,7 @@ div[data-list-id="audit-log"] > * {
   display: flex;
   flex-flow: row wrap;
   column-gap: 16px;
-  row-gap: 16px / 2;
+  row-gap: 8px;
   row-gap: 32px;
 }
 #widget-tab div[class^="children-"] > *,
@@ -950,7 +1042,7 @@ div[data-list-id="audit-log"] > * {
   display: flex;
   flex-flow: row wrap;
   column-gap: 16px;
-  row-gap: 16px / 2;
+  row-gap: 8px;
 }
 #discovery-tab > div[class^="container-"] > * {
   width: calc(100% / 2 - 16px);
