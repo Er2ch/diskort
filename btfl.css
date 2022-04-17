@@ -434,27 +434,6 @@ div[class^="banner-"] {
 div[class^="sidebar-"] {
   margin-right: 8px;
 }
-div[class^="sidebar-"],
-div[class^="sidebar-"] li,
-div[class^="sidebar-"] li div {
-  transition: ease-out 0.25s;
-}
-div[class^="sidebar-"]:not(:hover) {
-  width: 48px;
-  overflow: hidden;
-}
-div[class^="sidebar-"]:not(:hover) li {
-  margin-left: -4px;
-}
-div[class^="sidebar-"]:not(:hover) li div[class^="interactive-"] {
-  margin-left: 8px;
-}
-div[class^="sidebar-"]:not(:hover) li div[class^="layout-"] {
-  padding-left: 2px;
-}
-div[class^="sidebar-"]:not(:hover) li a + div[class^="children-"] {
-  display: none;
-}
 div[class^="repliedMessage-"]::before {
   margin: 0;
   border: none;
@@ -854,13 +833,19 @@ div[class^="standardSidebarView-"] div[class^="contentRegion-"] * {
 }
 #connections-tab div[class^="children-"] {
   flex-direction: row;
+  flex-flow: row wrap;
 }
 #connections-tab div[class^="children-"] div[class^="accountList-"] {
   margin-right: 8px;
+  width: 33%;
   height: 100%;
 }
-#connections-tab div[class^="children-"] div[class^="connectionList-"] {
+#connections-tab div[class^="children-"] div[class^="accountList-"] + div[class^="container-"] {
+  order: -1;
   width: 100%;
+}
+#connections-tab div[class^="children-"] div[class^="connectionList-"] {
+  flex-grow: 1;
 }
 #appearance-tab div[class^="children-"] {
   display: flex;
