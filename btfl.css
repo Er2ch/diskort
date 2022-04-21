@@ -63,6 +63,7 @@ div[aria-controls="partner-tab"],
 [class*="perks-"],
 [class*="nitro"],
 [class^="upsell"],
+[class*="Upsell"],
 [class^="availabilityIndicator-"],
 div[class^="serverBoostTabItem-"],
 div[class*="hero"],
@@ -428,32 +429,11 @@ div[class^="group-"],
 div[class*="card"],
 div[class^="categoryItem-"] > *,
 div[class^="content-"] img[class^="image-"],
-div[class^="banner-"] {
+div[class^="banner"] {
   border-radius: 16px !important;
 }
 div[class^="sidebar-"] {
   margin-right: 8px;
-}
-div[class^="sidebar-"],
-div[class^="sidebar-"] li,
-div[class^="sidebar-"] li div {
-  transition: ease-out 0.25s;
-}
-div[class^="sidebar-"]:not(:hover) {
-  width: 48px;
-  overflow: hidden;
-}
-div[class^="sidebar-"]:not(:hover) li {
-  margin-left: -4px;
-}
-div[class^="sidebar-"]:not(:hover) li div[class^="interactive-"] {
-  margin-left: 8px;
-}
-div[class^="sidebar-"]:not(:hover) li div[class^="layout-"] {
-  padding-left: 2px;
-}
-div[class^="sidebar-"]:not(:hover) li a + div[class^="children-"] {
-  display: none;
 }
 div[class^="repliedMessage-"]::before {
   margin: 0;
@@ -479,6 +459,10 @@ div[class^="role-"] {
   border-bottom-left-radius: 3px !important;
   max-width: unset;
   background: unset;
+}
+div[class^="statusItem-"] foreignObject,
+rect[class^="pointerEvents-"] {
+  mask: url(#svg-mask-status-online);
 }
 div[class^="auditLog"] div[class^="headerExpanded-"] {
   border-bottom-left-radius: 0 !important;
@@ -510,6 +494,9 @@ div[class^="messagesWrapper-"] div[class*="Bar-"]:not([class^="newMessagesBar-"]
 div[class^="attachedBars-"] {
   position: relative;
 }
+div[class^="channelTextArea-"][class*="channelTextAreaDisabled-"] button[class^="attachButton-"] {
+  display: none;
+}
 div[class^="channelTextArea-"] > div[class^="scrollableContainer-"] {
   background-color: unset;
   opacity: 1;
@@ -528,9 +515,9 @@ div[class^="channelTextArea-"] > div[class^="scrollableContainer-"] button[class
   padding: 8px;
   width: auto;
   height: auto;
+  margin-right: 8px;
 }
-div[class^="channelTextArea-"] > div[class^="scrollableContainer-"] div[class^="textArea-"] {
-  margin-left: 8px;
+div[class^="channelTextArea-"] > div[class^="scrollableContainer-"] div[class^="textArea-"]:not([class*="textAreaDisabled-"]) {
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
 }
@@ -698,6 +685,31 @@ div[class^="accountProfileCard-"] div[class^="userInfo-"] div[class^="avatar-"] 
   border-radius: 0 !important;
   border-bottom-right-radius: 50% !important;
 }
+div[class^="listItemContents-"] div[class^="userInfo"] {
+  padding-top: 0;
+}
+div[class^="listItemContents-"] div[class^="userInfo"] div[class^="avatar-"] {
+  top: 0;
+}
+div[class^="userPopout-"] div[class^="avatarWrapper"],
+div[class^="profileBannerPreview-"] div[class^="avatarWrapper"] {
+  top: 8px;
+}
+div[class^="userPopout-"] div[class^="headerTop-"],
+div[class^="profileBannerPreview-"] div[class^="headerTop-"] {
+  padding-top: 72px;
+}
+div[class^="userPopout-"] div[class^="headerTop-"] div[class^="headerText"],
+div[class^="profileBannerPreview-"] div[class^="headerTop-"] div[class^="headerText"] {
+  margin-left: 96px;
+}
+div[class^="profileBanner"] div[class*="avatar"]:not([class^="imageUploaderInner"]) {
+  margin-left: -8px;
+  margin-top: -8px;
+}
+div[class^="pencilContainer-"] {
+  z-index: 1;
+}
 div[class^="accountProfileCard-"] div[class^="field-"]:nth-child(1) {
   height: 0;
 }
@@ -708,16 +720,16 @@ div[class^="accountProfileCard-"] div[class^="field-"]:nth-child(1) button {
   top: -48pt;
   left: 300pt;
 }
-div[class^="banner-"] {
+div[class^="banner"] {
   position: absolute;
   width: inherit;
-  max-height: 84px;
+  max-height: 72px;
 }
-div[class^="banner-"][class*="popoutBanner"] {
-  position: relative;
-  max-height: 128px;
+div[class^="profileBannerPreview-"] div[class^="banner"],
+div[class^="banner"][class*="popoutBanner"] {
   border-bottom-left-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
+  width: 100%;
 }
 div[class^="avatarWrapper-"] {
   margin-right: auto;
@@ -746,7 +758,7 @@ div[class^="focusLock-"]:not([aria-labelledby]) > div[class^="root-"][class*="sm
 div[class^="focusLock-"]:not([aria-labelledby]) > div[class^="root-"][class*="small-"] header div[class^="nameTag"] {
   width: 64px;
   position: absolute;
-  margin-top: -84px;
+  margin-top: -64px;
   margin-left: 130px;
 }
 div[class^="focusLock-"]:not([aria-labelledby]) > div[class^="root-"][class*="small-"] header div[class^="customStatus"] {
@@ -854,13 +866,19 @@ div[class^="standardSidebarView-"] div[class^="contentRegion-"] * {
 }
 #connections-tab div[class^="children-"] {
   flex-direction: row;
+  flex-flow: row wrap;
 }
 #connections-tab div[class^="children-"] div[class^="accountList-"] {
   margin-right: 8px;
+  width: 33%;
   height: 100%;
 }
-#connections-tab div[class^="children-"] div[class^="connectionList-"] {
+#connections-tab div[class^="children-"] div[class^="accountList-"] + div[class^="container-"] {
+  order: -1;
   width: 100%;
+}
+#connections-tab div[class^="children-"] div[class^="connectionList-"] {
+  flex-grow: 1;
 }
 #appearance-tab div[class^="children-"] {
   display: flex;
