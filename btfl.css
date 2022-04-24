@@ -386,7 +386,6 @@ div[class^="searchBox-"],
 input[class^="inputDefault-"],
 div[class*="TextArea"],
 textarea,
-div[class^="bd-"],
 div[class^="tabBarItem-"],
 div[class^="checkbox"],
 button[class*="button"] {
@@ -446,7 +445,7 @@ div[class^="repliedMessage-"]::before {
   top: 0;
   bottom: 0;
 }
-div[class^="repliedMessage-"] > img {
+div[class^="repliedMessage-"] > :first-child {
   margin-left: 16px;
 }
 div[class^="role-"] {
@@ -454,7 +453,7 @@ div[class^="role-"] {
   border-width: 2px;
   border-style: solid;
 }
-[class*="embed"] {
+article[class^="embed"] {
   border-top-left-radius: 3px !important;
   border-bottom-left-radius: 3px !important;
   max-width: unset;
@@ -571,6 +570,23 @@ div[class^="channelTextArea-"] > div[class^="scrollableContainer-"] div[class^="
 #status-picker > div div[class^="submenuContainer-"] {
   width: 100%;
 }
+div[id^="message-accessories-"] > div[class^="messageAttachment-"] {
+  width: 100%;
+}
+div[id^="message-accessories-"] > div[class^="wrapper-"] {
+  position: relative;
+}
+div[id^="message-accessories-"] > div[class^="wrapper-"] div[class^="inviteSplash-"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  filter: brightness(50%);
+}
+div[id^="message-accessories-"] > div[class^="wrapper-"] div[class^="inviteSplash-"] ~ * {
+  position: relative;
+  z-index: 1;
+}
 div[class^="slider-"] div[class^="track-"] div[class^="grabber-"] {
   position: relative;
   width: 16px;
@@ -619,11 +635,49 @@ div[class^="container-"] > svg[class*="slider"] > * {
 div[class^="radioBar-"] {
   border: none;
 }
-div.bd-search-wrapper,
-div.bd-changelog-button {
-  align-self: center;
-  margin: 0;
-  margin-right: 8px;
+div[class^="card-"] > div[class*="header"],
+div.bd-server-card > div[class*="header"],
+div[class^="card-"] > div[class*="Header"],
+div.bd-server-card > div[class*="Header"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+div[class^="card-"] > div[class*="header"] div[class^="coverWrapper"],
+div.bd-server-card > div[class*="header"] div[class^="coverWrapper"],
+div[class^="card-"] > div[class*="Header"] div[class^="coverWrapper"],
+div.bd-server-card > div[class*="Header"] div[class^="coverWrapper"],
+div[class^="card-"] > div[class*="header"] div[class^="splash"],
+div.bd-server-card > div[class*="header"] div[class^="splash"],
+div[class^="card-"] > div[class*="Header"] div[class^="splash"],
+div.bd-server-card > div[class*="Header"] div[class^="splash"] {
+  filter: brightness(0.5);
+}
+div[class^="card-"] > div[class*="header"] .bd-server-icon,
+div.bd-server-card > div[class*="header"] .bd-server-icon,
+div[class^="card-"] > div[class*="Header"] .bd-server-icon,
+div.bd-server-card > div[class*="Header"] .bd-server-icon,
+div[class^="card-"] > div[class*="header"] > div[class*="icon"],
+div.bd-server-card > div[class*="header"] > div[class*="icon"],
+div[class^="card-"] > div[class*="Header"] > div[class*="icon"],
+div.bd-server-card > div[class*="Header"] > div[class*="icon"],
+div[class^="card-"] > div[class*="header"] > div[class*="Icon"],
+div.bd-server-card > div[class*="header"] > div[class*="Icon"],
+div[class^="card-"] > div[class*="Header"] > div[class*="Icon"],
+div.bd-server-card > div[class*="Header"] > div[class*="Icon"] {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  overflow: hidden;
+  padding: 5px;
+}
+div[class^="card-"] > div[class*="info"],
+div.bd-server-card > div[class*="info"],
+div[class^="card-"] > div[class*="Info"],
+div.bd-server-card > div[class*="Info"] {
+  margin-top: 84px;
 }
 .theme-dimmer,
 div[class^="layer-"] div.theme-light,
@@ -739,49 +793,49 @@ header div[class^="nameTagNoCustomStatus-"] {
   margin-bottom: 48px;
   margin-left: 160px;
 }
-div[class^="focusLock-"]:not([aria-labelledby]) > div[class^="root-"][class*="small-"] {
+div.root-8LYsGj {
   flex-direction: row;
 }
-div[class^="focusLock-"]:not([aria-labelledby]) > div[class^="root-"][class*="small-"] header {
+div.root-8LYsGj header {
   width: 260px;
   margin: 24px;
 }
-div[class^="focusLock-"]:not([aria-labelledby]) > div[class^="root-"][class*="small-"] header div[class^="avatar-"] {
+div.root-8LYsGj header div[class^="avatar-"] {
   top: 0;
   left: 0;
   position: relative;
 }
-div[class^="focusLock-"]:not([aria-labelledby]) > div[class^="root-"][class*="small-"] header div[class^="headerTop-"] {
+div.root-8LYsGj header div[class^="headerTop-"] {
   position: unset;
   justify-content: left;
 }
-div[class^="focusLock-"]:not([aria-labelledby]) > div[class^="root-"][class*="small-"] header div[class^="nameTag"] {
+div.root-8LYsGj header div[class^="nameTag"] {
   width: 64px;
   position: absolute;
   margin-top: -64px;
   margin-left: 130px;
 }
-div[class^="focusLock-"]:not([aria-labelledby]) > div[class^="root-"][class*="small-"] header div[class^="customStatus"] {
+div.root-8LYsGj header div[class^="customStatus"] {
   margin-top: 16px;
   padding: 0;
 }
-div[class^="focusLock-"]:not([aria-labelledby]) > div[class^="root-"][class*="small-"] div[class^="body-"] {
+div.root-8LYsGj div[class^="body-"] {
   border: none;
   margin-left: 16px;
   height: 370px;
 }
-div[class^="focusLock-"]:not([aria-labelledby]) > div[class^="root-"][class*="small-"] div[class^="body-"] > * {
+div.root-8LYsGj div[class^="body-"] > * {
   padding: 0 !important;
 }
-div[class^="focusLock-"]:not([aria-labelledby]) > div[class^="root-"][class*="small-"] div[class^="tabBarContainer"] {
+div.root-8LYsGj div[class^="tabBarContainer"] {
   border: none;
 }
-div[class^="focusLock-"]:not([aria-labelledby]) > div[class^="root-"][class*="small-"] div[class^="tabBar-"] {
+div.root-8LYsGj div[class^="tabBar-"] {
   flex-direction: column;
   height: unset;
   margin: 8px;
 }
-div[class^="focusLock-"]:not([aria-labelledby]) > div[class^="root-"][class*="small-"] div[class^="tabBarItem-"] {
+div.root-8LYsGj div[class^="tabBarItem-"] {
   margin-right: 0;
   border-bottom: unset;
   border-top-left-radius: 0 !important;
@@ -789,8 +843,8 @@ div[class^="focusLock-"]:not([aria-labelledby]) > div[class^="root-"][class*="sm
   border-top-left-radius: 8px !important;
   border-bottom-left-radius: 8px !important;
 }
-div[class^="focusLock-"]:not([aria-labelledby]) > div[class^="root-"][class*="small-"] div[class^="tabBarItem-"]:hover,
-div[class^="focusLock-"]:not([aria-labelledby]) > div[class^="root-"][class*="small-"] div[class^="tabBarItem-"][class*="selected-"] {
+div.root-8LYsGj div[class^="tabBarItem-"]:hover,
+div.root-8LYsGj div[class^="tabBarItem-"][class*="selected-"] {
   border-right: 2px solid var(--interactive-active) !important;
 }
 [class^="membersWrap-"],
