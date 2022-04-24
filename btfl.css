@@ -224,6 +224,34 @@ nav div[class^="animatedContainer-"] {
 nav div[class^="animatedContainer-"] div[class^="bannerImage-"]::before {
   background: unset !important;
 }
+div.bd-search-wrapper,
+div.bd-changelog-button {
+  align-self: center;
+  margin: 0;
+  margin-right: 8px;
+}
+div[class^="standardSidebarView-"] div[class^="repoList-"] > div div[class^="repoHeader-"] > * {
+  max-width: unset;
+}
+div[class^="standardSidebarView-"] div[class^="repoList-"] > div > div:last-child {
+  height: 100vh;
+}
+div[class^="standardSidebarView-"] div[class^="repoList-"] > div #pluginrepo-tab,
+div[class^="standardSidebarView-"] div[class^="repoList-"] > div #themerepo-tab {
+  max-width: unset;
+}
+div.bd-addon-list:not(.bd-grid-view) {
+  display: flex;
+  flex-flow: row wrap;
+  column-gap: 16px;
+  row-gap: 8px;
+}
+div.bd-addon-list:not(.bd-grid-view) > * {
+  width: calc(100% / 2 - 16px);
+}
+div.bd-addon-list:not(.bd-grid-view) div[class^="divider"]:empty {
+  display: none;
+}
 [class^="sidebar-"],
 [class^="sidebar-"] > nav {
   background-color: transparent;
@@ -375,6 +403,7 @@ div[class^="avatar-"] {
   scrollbar-color: var(--scrollbar-auto-scrollbar-color-track) transparent;
 }
 .round,
+div[class^="bd-"],
 li[class^="channel-"],
 [class^="avatar-"],
 [role="dialog"],
