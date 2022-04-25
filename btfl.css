@@ -41,8 +41,6 @@ div[class^="autocompleteShadow-"],
 div[class^="overviewSidebar-"],
 form::before,
 div[class^="children-"]::after,
-div[class^="base-"] div[class^="children-"] div[class^="divider-"],
-div[class^="base-"] div[class^="children-"] div[class^="divider-"] ~ div:not([class^="tabBar-"]),
 .nitro,
 [class^="membersGroup-"],
 div[class^="keybind-"],
@@ -230,11 +228,15 @@ div.bd-changelog-button {
   margin: 0;
   margin-right: 8px;
 }
+div[class^="standardSidebarView-"] div[class^="repoList-"] > div {
+  position: absolute;
+  width: 100%;
+}
 div[class^="standardSidebarView-"] div[class^="repoList-"] > div div[class^="repoHeader-"] > * {
   max-width: unset;
 }
-div[class^="standardSidebarView-"] div[class^="repoList-"] > div > div:last-child {
-  height: 100vh;
+div[class^="standardSidebarView-"] div[class^="repoList-"] > div div[class^="repoHeader-"] div[class^="tabBar-"] {
+  height: 48px;
 }
 div[class^="standardSidebarView-"] div[class^="repoList-"] > div #pluginrepo-tab,
 div[class^="standardSidebarView-"] div[class^="repoList-"] > div #themerepo-tab {
