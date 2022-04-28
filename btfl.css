@@ -79,7 +79,6 @@ nav[class^="privateChannels-"] div div [data-list-item-id$="nitro"],
 nav div[class^="animatedContainer-"] [class^="bannerImg-"],
 [class^="botTagVerified-"],
 [class^="badgeList-"],
-[class^="profileBadges-"],
 div[aria-controls*="nitro"],
 div[aria-controls="library-inventory-tab"],
 div[aria-controls="subscriptions-tab"],
@@ -777,20 +776,31 @@ div[class^="listItemContents-"] div[class^="userInfo"] div[class^="avatar-"] {
   top: 0;
 }
 div[class^="userPopout-"] div[class^="avatarWrapper"],
-div[class^="profileBannerPreview-"] div[class^="avatarWrapper"] {
+div[class^="profileBannerPreview-"] div[class^="avatarWrapper"],
+div[class^="userPopout-"] div[class*="avatarUploaderNormal-"],
+div[class^="profileBannerPreview-"] div[class*="avatarUploaderNormal-"] {
+  position: relative;
+  margin-top: 8px;
   top: 8px;
+  left: 0;
+  align-self: center;
+}
+div[class^="userPopout-"] div[class^="headerText-"],
+div[class^="profileBannerPreview-"] div[class^="headerText-"] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+div[class^="userPopout-"] div[class^="profileBadges-"],
+div[class^="profileBannerPreview-"] div[class^="profileBadges-"] {
+  position: static;
+  justify-content: center;
 }
 div[class^="userPopout-"] div[class^="headerTop-"],
 div[class^="profileBannerPreview-"] div[class^="headerTop-"] {
-  padding-top: 72px;
-}
-div[class^="userPopout-"] div[class^="headerTop-"] div[class^="headerText"],
-div[class^="profileBannerPreview-"] div[class^="headerTop-"] div[class^="headerText"] {
-  margin-left: 96px;
-}
-div[class^="profileBanner"] div[class*="avatar"]:not([class^="imageUploaderInner"]) {
-  margin-left: -8px;
-  margin-top: -8px;
+  padding: 8px;
+  margin-top: 8px;
+  align-self: center;
 }
 div[class^="pencilContainer-"] {
   z-index: 1;
